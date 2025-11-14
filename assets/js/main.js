@@ -6,8 +6,48 @@
 * License: https://bootstrapmade.com/license/
 */
 
-(function() {
+(function () {
   "use strict";
+
+  var data = {
+    "company": "AlRaad",
+    "identity": {
+      "name": "الرعد (Thunder)",
+      "tagline": "for contracting & advertising"
+    },
+    "about": {
+      "title": "Who are we",
+      "content": "AlRaad stands out as your premier partner for full-spectrum advertising and production services. Our expertise extends far beyond event execution and direct marketing—we deliver innovative, all-in-one solutions paired with creative consultancy to transform your ideas into reality."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": "We are dedicated to making a significant impact on our customers, vendors, and employees through our professional skills. With extensive experience in branding, events, launches, signage, printing, and interior design, AlRaad is equipped to handle all your advertising needs. Our deep expertise is evident in every project we complete."
+    },
+    "services": [
+      "Signboard",
+      "Furniture",
+      "Decoration & Civil Work",
+      "Booths & Kiosks",
+      "Branding & Digital Printing",
+      "Stands & Gondola"
+    ],
+    "coverage": {
+      "title": "Where do we serve?",
+      "content": "From city limits to limitless skies, AlRaad's teams cover every corner of Iraq!",
+      "locations": [
+        "Erbil - Gazna Road",
+        "Baghdad - Al Dawra"
+      ],
+      "maps": [
+        "https://maps.app.goo.gl/yEAPYT7iNU1zxF5t7",
+        "https://maps.app.goo.gl/a7c93ThUx3X7s8X19"
+      ]
+    },
+    "contact": {
+      "phone": "07722234030",
+      "email": "swatalraadoffice@gmail.com"
+    }
+  };
 
   /**
    * Apply .scrolled class to the body as the page is scrolled down
@@ -50,7 +90,7 @@
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', function (e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -110,7 +150,7 @@
     new Waypoint({
       element: item,
       offset: '80%',
-      handler: function(direction) {
+      handler: function (direction) {
         let progress = item.querySelectorAll('.progress .progress-bar');
         progress.forEach(el => {
           el.style.width = el.getAttribute('aria-valuenow') + '%';
@@ -134,13 +174,13 @@
   /**
    * Init isotope layout and filters
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+  document.querySelectorAll('.isotope-layout').forEach(function (isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function () {
       initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
         itemSelector: '.isotope-item',
         layoutMode: layout,
@@ -149,8 +189,8 @@
       });
     });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
+    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
+      filters.addEventListener('click', function () {
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
         initIsotope.arrange({
@@ -168,7 +208,7 @@
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -186,7 +226,7 @@
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
-  window.addEventListener('load', function(e) {
+  window.addEventListener('load', function (e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
