@@ -22,21 +22,24 @@
                 <h4>Useful Links</h4>
                 <ul>
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="{{ route('about') }}">About Us</a></li>
+                    <li><a href="{{ route('services.all') }}">Services</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
+                    <li><a href="{{ route('home') }}">Privacy Policy</a></li>
                 </ul>
             </div>
 
             <div class="col-lg-2 col-6 footer-links">
                 <h4>Our Services</h4>
                 <ul>
-                    <li><a href="#services">Signboards</a></li>
-                    <li><a href="#services">Furniture & Interior Design</a></li>
-                    <li><a href="#services">Branding & Digital Printing</a></li>
-                    <li><a href="#services">Booths & Kiosks</a></li>
-                    <li><a href="#services">Stands & Gondolas</a></li>
+                    @php($services = get_services())
+                    @foreach ($services as $service)
+                        <li>
+                            <a href="{{ route('services.details', $service->slug) }}">
+                                {{ $service->name }}
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
 

@@ -30,26 +30,21 @@
     <link rel="stylesheet" href="{{ asset('public/assets/css/app.css') }}">
     <link href="{{ asset('public/assets/css/main.css') }}" rel="stylesheet">
 
+    @stack('css')
+
 </head>
 
 {{-- <body class="index-page dark-background"> --}}
 
 <body class="index-page">
 
-    <!-- Header -->
-    @include('web.layout.partials.header')
-    <!-- End Header -->
+    <div class="mobile-nav-toggle hidden"></div>
 
     <main class="main">
 
         @yield('content')
 
     </main>
-
-    <!-- Footer -->
-    @include('web.layout.partials.footer')
-    <!-- End Footer -->
-
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
@@ -72,6 +67,7 @@
     <!-- Main JS File -->
     <script src="{{ asset('public/assets/js/main.js') }}"></script>
     <script src="{{ asset('public/assets/js/app.js') }}"></script>
+    @stack('scripts')
 
 </body>
 

@@ -1,6 +1,7 @@
+{{-- @dd($data['project']) --}}
 @extends('web.layout.app')
 
-@section('title', 'Project Details')
+@section('title', $data['project']->name)
 
 @push('css')
 @endpush
@@ -9,11 +10,11 @@
     <!-- Page Title -->
     <div class="page-title light-background">
         <div class="container d-lg-flex justify-content-between align-items-center">
-            <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
+            <h1 class="mb-2 mb-lg-0">{{ $data['project']->name }}</h1>
             <nav class="breadcrumbs">
                 <ol>
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li class="current">Portfolio Details</li>
+                    <li class="current">{{ $data['project']->name }}</li>
                 </ol>
             </nav>
         </div>
@@ -26,41 +27,36 @@
 
             <div class="portfolio-details-slider swiper init-swiper">
                 <script type="application/json" class="swiper-config">
-        {
-          "loop": true,
-          "speed": 600,
-          "autoplay": {
-            "delay": 5000
-          },
-          "slidesPerView": "auto",
-          "navigation": {
-            "nextEl": ".swiper-button-next",
-            "prevEl": ".swiper-button-prev"
-          },
-          "pagination": {
-            "el": ".swiper-pagination",
-            "type": "bullets",
-            "clickable": true
-          }
-        }
-      </script>
+                    {
+                        "loop": true,
+                        "speed": 600,
+                        "autoplay": {
+                            "delay": 5000
+                        },
+                        "slidesPerView": "auto",
+                        "navigation": {
+                            "nextEl": ".swiper-button-next",
+                            "prevEl": ".swiper-button-prev"
+                        },
+                        "pagination": {
+                            "el": ".swiper-pagination",
+                            "type": "bullets",
+                            "clickable": true
+                        }
+                    }
+                </script>
                 <div class="swiper-wrapper align-items-center">
-
                     <div class="swiper-slide">
-                        <img src="{{ asset('public/assets/img/portfolio/1.jpg') }}" alt="Signboard Project">
+                        <img src="{{ asset('public/storage/' . $data['project']['main_image']) }}"
+                            alt="{{ $data['project']->name }} main image">
                     </div>
 
-                    <div class="swiper-slide">
-                        <img src="{{ asset('public/assets/img/portfolio/2.jpg') }}" alt="Furniture Project">
-                    </div>
+                    @foreach ($data['project']->gallery_images as $img)
+                        <div class="swiper-slide">
+                            <img src="{{ asset('public/storage/' . $img) }}" alt="{{ $data['project']->name }} main image">
+                        </div>
+                    @endforeach
 
-                    <div class="swiper-slide">
-                        <img src="{{ asset('public/assets/img/portfolio/3.jpg') }}" alt="Branding Project">
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img src="{{ asset('public/assets/img/portfolio/4.jpg') }}" alt="Booth Project">
-                    </div>
 
                 </div>
                 <div class="swiper-button-prev"></div>
@@ -94,8 +90,8 @@
                                 <i class="bi bi-quote quote-icon-right"></i>
                             </p>
                             <div>
-                                <img src="{{ asset('public/assets/img/testimonials/testimonials-5.jpg') }}" class="testimonial-img"
-                                    alt="Client Testimonial">
+                                <img src="{{ asset('public/assets/img/testimonials/testimonials-5.jpg') }}"
+                                    class="testimonial-img" alt="Client Testimonial">
                                 <h3>Ahmed Saleh</h3>
                                 <h4>Retail Business Owner</h4>
                             </div>

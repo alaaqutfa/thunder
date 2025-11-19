@@ -1,3 +1,4 @@
+{{-- @dd($data) --}}
 @extends('web.layout.app')
 
 @section('title', 'Home')
@@ -9,14 +10,15 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-        <img src="{{ asset('public/assets/img/hero-bg.jpg') }}" alt="" data-aos="fade-in">
+        <img src="{{ asset($data['heroImg'] ?? 'public/assets/img/hero-bg.jpg') }}" alt="" data-aos="fade-in">
 
         <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <h2>AlRaad - Thunder</h2>
-                    <p>For Contracting & Advertising</p>
-                    <a href="https://wa.me/9647722234030" class="btn-get-started">Book Appointment</a>
+                    <h2>{{ $data['identity_name'] }}</h2>
+                    <p>{{ $data['tagline'] }}</p>
+                    <a href="{{ $data['contactPhone'] }}"
+                        class="btn-get-started">{{ $data['heroBtnText'] ?? 'Book Appointment' }}</a>
                 </div>
             </div>
         </div>
@@ -28,12 +30,9 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Who are we</h2>
+            <h2>{{ $data['aboutTitle'] }}</h2>
             <p>
-                AlRaad stands out as your premier partner for full-spectrum advertising and production services. Our
-                expertise extends far beyond event execution and direct marketing—we deliver innovative, all-in-one
-                solutions
-                paired with creative consultancy to transform your ideas into reality.
+                {{ $data['aboutContent'] }}
             </p>
         </div><!-- End Section Title -->
 
@@ -43,19 +42,15 @@
 
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="why-box">
-                        <h3>Our Mission</h3>
+                        <h3>{{ $data['missionTitle'] }}</h3>
                         <p>
-                            We are dedicated to making a significant impact on our customers, vendors, and employees
-                            through our
-                            professional skills. With extensive experience in branding, events, launches, signage,
-                            printing, and
-                            interior design, AlRaad is equipped to handle all your advertising needs. Our deep
-                            expertise is evident
-                            in every project we complete.
+                            {{ $data['missionContent'] }}
                         </p>
                         <div class="text-center">
-                            <a href="https://wa.me/9647722234030" class="more-btn"><span>Learn More</span> <i
-                                    class="bi bi-chevron-right"></i></a>
+                            <a href="{{ $data['contactPhone'] }}" class="more-btn">
+                                <span>Learn More</span>
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div><!-- End Why Box -->
@@ -101,6 +96,59 @@
         </div>
 
     </section><!-- /What We Do Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Featured Portfolio</h2>
+            <p>Explore our recent projects showcasing creativity, quality, and innovation across Iraq.</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+                <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                    <li data-filter="*" class="filter-active">All</li>
+                    @foreach ($data['services'] as $service)
+                        <li data-filter=".{{ $service['slug'] }}">{{ $service['name'] }}</li>
+                    @endforeach
+
+                </ul><!-- End Portfolio Filters -->
+
+                <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+                    @foreach ($data['featuredProjects'] as $project)
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item {{ $project->service->slug }}">
+                            <img src="{{ asset('public/storage/' . $project->main_image) }}" class="img-fluid"
+                                alt="{{ $project->name }} Project">
+                            <div class="portfolio-info">
+                                <h4>{{ $project->name }}</h4>
+                                <p>{{ $project->description }}</p>
+                                <a href="{{ asset('public/storage/' . $project->main_image) }}"
+                                    title="{{ $project->name }}"
+                                    data-gallery="portfolio-gallery-{{ $project->service->slug }}"
+                                    class="glightbox preview-link">
+                                    <i class="bi bi-zoom-in"></i>
+                                </a>
+                                <a href="{{ route('project.single', $project->id) }}" title="More Details"
+                                    class="details-link">
+                                    <i class="bi bi-link-45deg"></i>
+                                </a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+                    @endforeach
+
+                </div><!-- End Portfolio Container -->
+
+                {{ $data['featuredProjects']->links() }}
+
+            </div>
+
+        </div>
+
+    </section><!-- /Portfolio Section -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section light-background">
@@ -214,6 +262,7 @@
 
     <!-- Team Section -->
     <section class="team-15 team section" id="team">
+
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Our Team</h2>
@@ -221,13 +270,15 @@
         </div><!-- End Section Title -->
 
         <div class="content">
+
             <div class="container">
 
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-4">
+
+                    <div class="col-lg-4 col-md-6 mb-4">
                         <div class="person">
                             <figure>
-                                <img src="{{ asset('public/assets/img/team/team-1.jpg') }}" alt="Joshua Stefan"
+                                <img src="{{ asset('public/assets/img/team/team-1.png') }}" alt="Joshua Stefan"
                                     class="img-fluid">
                                 <div class="social">
                                     <a href="#"><span class="bi bi-facebook"></span></a>
@@ -236,16 +287,16 @@
                                 </div>
                             </figure>
                             <div class="person-contents">
-                                <h3>Joshua Stefan</h3>
-                                <span class="position">Web Development</span>
+                                <h3>Mohamed Raad Mohamed</h3>
+                                <span class="position">CEO & Owner</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-4 col-md-6 mb-4">
                         <div class="person">
                             <figure>
-                                <img src="{{ asset('public/assets/img/team/team-2.jpg') }}" alt="Sheena Anderson"
+                                <img src="{{ asset('public/assets/img/team/team-2.png') }}" alt="Sheena Anderson"
                                     class="img-fluid">
                                 <div class="social">
                                     <a href="#"><span class="bi bi-facebook"></span></a>
@@ -254,16 +305,16 @@
                                 </div>
                             </figure>
                             <div class="person-contents">
-                                <h3>Sheena Anderson</h3>
-                                <span class="position">Marketing</span>
+                                <h3>Fadi Debs</h3>
+                                <span class="position">COO & Co Founder</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-4 col-md-6 mb-4">
                         <div class="person">
                             <figure>
-                                <img src="{{ asset('public/assets/img/team/team-3.jpg') }}" alt="Evan Smith"
+                                <img src="{{ asset('public/assets/img/team/team-3.png') }}" alt="Evan Smith"
                                     class="img-fluid">
                                 <div class="social">
                                     <a href="#"><span class="bi bi-facebook"></span></a>
@@ -272,32 +323,16 @@
                                 </div>
                             </figure>
                             <div class="person-contents">
-                                <h3>Evan Smith</h3>
-                                <span class="position">Content</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="person">
-                            <figure>
-                                <img src="{{ asset('public/assets/img/team/team-4.jpg') }}" alt="Kaylie Jones"
-                                    class="img-fluid">
-                                <div class="social">
-                                    <a href="#"><span class="bi bi-facebook"></span></a>
-                                    <a href="#"><span class="bi bi-twitter-x"></span></a>
-                                    <a href="#"><span class="bi bi-linkedin"></span></a>
-                                </div>
-                            </figure>
-                            <div class="person-contents">
-                                <h3>Kaylie Jones</h3>
-                                <span class="position">Accountant</span>
+                                <h3>Ahmad Khayat</h3>
+                                <span class="position">Art Director</span>
                             </div>
                         </div>
                     </div>
 
                 </div>
+
             </div>
+
         </div>
 
     </section><!-- /Team Section -->

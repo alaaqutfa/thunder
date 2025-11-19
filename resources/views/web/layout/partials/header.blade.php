@@ -9,6 +9,38 @@
 
         <nav id="navmenu" class="navmenu">
             <ul>
+
+                @auth
+                    @if (Auth::user()->role_id == 1 || Auth::user()->role_id == 2)
+                        <li class="dropdown">
+                            <a href="{{ route('admin.dashboard') }}"
+                                class="flex items-center gap-2 {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                                <i class="bi bi-speedometer2"></i>
+                                <span>Dashboard</span>
+                                <i class="bi bi-chevron-down toggle-dropdown"></i>
+                            </a>
+
+                            <ul>
+                                <li>
+                                    <a href="{{ route('admin.projects.index') }}">
+                                        Projects Management
+                                    </a>
+                                </li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                                        @csrf
+                                        <button type="submit" class="w-full">
+                                            <a href="#" style="justify-content: flex-start;gap: 0.5rem;">
+                                                <i class="bi bi-box-arrow-right"></i>
+                                                Log out
+                                            </a>
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+                @endauth
                 <li>
                     <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">
                         Home
@@ -29,17 +61,20 @@
                     </a>
 
                     <ul>
-                        <li><a href="#">Signboards</a></li>
-                        <li><a href="#">Furniture & Interior Design</a></li>
-                        <li><a href="#">Branding & Digital Printing</a></li>
-                        <li><a href="#">Booths & Kiosks</a></li>
-                        <li><a href="#">Stands & Gondolas</a></li>
-                        <li><a href="#">Creative Consultancy</a></li>
+                        @php($services = get_services())
+                        @foreach ($services as $service)
+                            <li>
+                                <a href="{{ route('services.details', $service->slug) }}">
+                                    {{ $service->name }}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </li>
 
                 <li>
-                    <a href="{{ route('project.all') }}" class="{{ request()->routeIs('project.*') ? 'active' : '' }}">
+                    <a href="{{ route('project.all') }}"
+                        class="{{ request()->routeIs('project.*') ? 'active' : '' }}">
                         Projects
                     </a>
                 </li>

@@ -1,0 +1,151 @@
+{
+    "company": "AlRaad",
+    "identity": {
+        "name": "الرعد (Thunder)",
+        "tagline": "for contracting & advertising"
+    },
+    "about": {
+        "title": "Who are we",
+        "content": "AlRaad stands out as your premier partner for full-spectrum advertising and production services. Our expertise extends far beyond event execution and direct marketing—we deliver innovative, all-in-one solutions paired with creative consultancy to transform your ideas into reality."
+    },
+    "mission": [
+        {
+            "title": "Our Mission",
+            "content": "We are dedicated to making a significant impact on our customers, vendors, and employees through our professional skills. With extensive experience in branding, events, launches, signage, printing, and interior design, AlRaad is equipped to handle all your advertising needs. Our deep expertise is evident in every project we complete."
+        },
+        {
+            "title": "Innovative Branding",
+            "content": "We craft creative branding and digital printing solutions that transform ideas into impactful visuals."
+        },
+        {
+            "title": "Spaces that Inspire",
+            "content": "From booths and kiosks to furniture and civil work, we design environments that engage and impress."
+        },
+        {
+            "title": "Nationwide Reach",
+            "content": "Our teams cover every corner of Iraq, delivering consistent quality and support wherever you are."
+        }
+    ],
+    "services": [
+        "Signboards",
+        "Furniture & Interior Design",
+        "Decoration & Civil Work",
+        "Booths & Kiosks",
+        "Branding & Digital Printing",
+        "Stands & Gondolas",
+        "Creative Consultancy"
+    ],
+    "skills": [
+        { "name": "Branding & Digital Printing", "value": 95 },
+        { "name": "Events & Launches", "value": 90 },
+        { "name": "Signboards & Outdoor Advertising", "value": 85 },
+        { "name": "Interior Design & Decoration", "value": 80 },
+        { "name": "Booths & Kiosks", "value": 75 },
+        { "name": "Creative Consultancy", "value": 90 }
+    ],
+    "stats": {
+        "clients": 232,
+        "projects": 521,
+        "hours_of_support": 1453,
+        "team_members": 32
+    },
+    "projects": [
+        {
+            "category": "Signboards",
+            "title": "Commercial Signboard Project",
+            "description": "High-quality outdoor signage for retail visibility.",
+            "images": ["assets/img/portfolio/signboard-1.jpg"]
+        },
+        {
+            "category": "Furniture",
+            "title": "Furniture Design",
+            "description": "Custom furniture solutions for modern interiors.",
+            "images": ["assets/img/portfolio/furniture-1.jpg"]
+        },
+        {
+            "category": "Decoration",
+            "title": "Decoration & Civil Work",
+            "description": "Creative decoration and civil work for events and spaces.",
+            "images": ["assets/img/portfolio/decoration-1.jpg"]
+        },
+        {
+            "category": "Booths",
+            "title": "Booths & Kiosks",
+            "description": "Engaging booth designs for exhibitions and retail spaces.",
+            "images": ["assets/img/portfolio/booth-1.jpg"]
+        },
+        {
+            "category": "Branding",
+            "title": "Branding & Printing",
+            "description": "Creative branding and digital printing solutions.",
+            "images": ["assets/img/portfolio/branding-1.jpg"]
+        },
+        {
+            "category": "Stands",
+            "title": "Stands & Gondolas",
+            "description": "Functional stands to showcase products effectively.",
+            "images": ["assets/img/portfolio/stands-1.jpg"]
+        }
+    ],
+    "testimonials": [
+        {
+            "name": "Ahmed Saleh",
+            "role": "Retail Business Owner",
+            "quote": "AlRaad transformed our store with stunning signboards and branding. Customers immediately noticed the difference!"
+        },
+        {
+            "name": "Layla Hassan",
+            "role": "Event Manager",
+            "quote": "Their booths and kiosks were a highlight of our exhibition. Professional, creative, and delivered on time."
+        },
+        {
+            "name": "Omar Khalid",
+            "role": "Marketing Director",
+            "quote": "AlRaad’s digital printing and branding services gave our campaign a fresh, modern look that resonated with our audience."
+        }
+    ],
+    "team": [
+        { "name": "Joshua Stefan", "role": "Web Development" },
+        { "name": "Sheena Anderson", "role": "Marketing" },
+        { "name": "Evan Smith", "role": "Content" },
+        { "name": "Kaylie Jones", "role": "Accountant" }
+    ],
+    "coverage": {
+        "title": "Where do we serve?",
+        "content": "From city limits to limitless skies, AlRaad's teams cover every corner of Iraq!",
+        "locations": ["Erbil - Gazna Road", "Baghdad - Al Dawra"],
+        "maps": [
+            "https://maps.app.goo.gl/yEAPYT7iNU1zxF5t7",
+            "https://maps.app.goo.gl/a7c93ThUx3X7s8X19"
+        ]
+    },
+    "contact": {
+        "phone": "+964 772 223 4030",
+        "email": "swatalraadoffice@gmail.com",
+        "addresses": ["Baghdad - Al Dawra, Iraq", "Erbil - Gazna Road, Iraq"]
+    },
+    "footer": {
+        "about": "AlRaad is your trusted partner for contracting & advertising solutions, delivering creative branding, signage, events, and interior design services across Iraq.",
+        "social": ["facebook", "instagram", "linkedin", "twitter-x"],
+        "useful_links": [
+            "Home",
+            "About Us",
+            "Services",
+            "Contact",
+            "Privacy Policy"
+        ],
+        "services_links": [
+            "Signboards",
+            "Furniture & Interior Design",
+            "Branding & Digital Printing",
+            "Booths & Kiosks",
+            "Stands & Gondolas"
+        ],
+        "contact": {
+            "phone": "+964 772 223 4030",
+            "email": "swatalraadoffice@gmail.com",
+            "locations": ["Baghdad - Al Dawra", "Erbil - Gazna Road"]
+        },
+        "copyright": "© 2025 AlRaad. All Rights Reserved."
+    }
+}
