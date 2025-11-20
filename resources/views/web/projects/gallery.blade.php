@@ -30,13 +30,12 @@
                 <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
                     @foreach ($data['projects'] as $project)
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item {{ $project->service->slug }}">
-                            <img src="{{ asset('public/storage/' . $project->main_image) }}" class="img-fluid"
-                                alt="{{ $project->name }} Project">
+                            <img src="{{ asset('public/storage/' . $project->main_image) }}" class="img-fluid object-contain"
+                                style="max-height:300px; width:auto; transition:0.3s;" alt="{{ $project->name }} Project">
                             <div class="portfolio-info">
                                 <h4>{{ $project->name }}</h4>
                                 <p>{{ $project->description }}</p>
-                                <a href="{{ asset('public/storage/' . $project->main_image) }}"
-                                    title="{{ $project->name }}"
+                                <a href="{{ asset('public/storage/' . $project->main_image) }}" title="{{ $project->name }}"
                                     data-gallery="portfolio-gallery-{{ $project->service->slug }}"
                                     class="glightbox preview-link">
                                     <i class="bi bi-zoom-in"></i>

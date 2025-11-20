@@ -1,4 +1,4 @@
-{{-- @dd($data['project']) --}}
+{{-- @dd($data) --}}
 @extends('web.layout.app')
 
 @section('title', $data['project']->name)
@@ -45,18 +45,20 @@
                         }
                     }
                 </script>
-                <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide">
-                        <img src="{{ asset('public/storage/' . $data['project']['main_image']) }}"
-                            alt="{{ $data['project']->name }} main image">
+                <div class="swiper-wrapper align-items-center rounded-lg cursor-pointer">
+                    <div class="swiper-slide flex justify-center items-center" style="background-color: rgba(0,0,0,0.05);">
+                        <img src="{{ asset('public/storage/' . $data['project']['main_image']) }}" class="object-contain"
+                            style="max-height:60vh; width:auto; z-index:2;" alt="{{ $data['project']->name }} main image">
                     </div>
 
                     @foreach ($data['project']->gallery_images as $img)
-                        <div class="swiper-slide">
-                            <img src="{{ asset('public/storage/' . $img) }}" alt="{{ $data['project']->name }} main image">
+                        <div class="swiper-slide flex justify-center items-center rounded-lg cursor-pointer"
+                            style="background-color: rgba(0,0,0,0.05);">
+                            <img src="{{ asset('public/storage/' . $img) }}" class="object-contain"
+                                style="max-height:60vh; width:auto; z-index:2; transition:0.3s;"
+                                alt="{{ $data['project']->name }} gallery image">
                         </div>
                     @endforeach
-
 
                 </div>
                 <div class="swiper-button-prev"></div>
@@ -68,20 +70,12 @@
 
                 <div class="col-lg-8" data-aos="fade-up">
                     <div class="portfolio-description">
-                        <h2>Branding & Signage Project</h2>
+                        <h2>{{ $data['project']->name }}</h2>
                         <p>
-                            This project highlights AlRaad’s expertise in delivering impactful branding and signage
-                            solutions.
-                            From concept to execution, our team designed and installed high-quality signboards that enhanced
-                            visibility and strengthened the client’s brand presence.
-                        </p>
-                        <p>
-                            The project also included digital printing and creative consultancy, ensuring consistency across
-                            all marketing materials. Our innovative approach helped the client stand out in a competitive
-                            market.
+                            {{ $data['project']->description }}
                         </p>
 
-                        <div class="testimonial-item">
+                        {{-- <div class="testimonial-item">
                             <p>
                                 <i class="bi bi-quote quote-icon-left"></i>
                                 <span>“AlRaad transformed our business front with professional signage and branding. The
@@ -100,7 +94,7 @@
                         <p>
                             Every detail was carefully executed to reflect the client’s vision. The project demonstrates
                             AlRaad’s commitment to excellence, creativity, and customer satisfaction.
-                        </p>
+                        </p> --}}
                     </div>
                 </div>
 
@@ -108,7 +102,7 @@
                     <div class="portfolio-info">
                         <h3>Project Information</h3>
                         <ul>
-                            <li><strong>Category</strong> Branding & Signage</li>
+                            <li><strong>Category</strong> {{ $data['project']->service->name }}</li>
                             <li><strong>Client</strong> Local Retail Business</li>
                             <li><strong>Project Date</strong> 15 June, 2024</li>
                             <li><strong>Project Location</strong> Baghdad, Iraq</li>
