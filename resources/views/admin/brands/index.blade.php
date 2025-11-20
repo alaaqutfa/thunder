@@ -73,7 +73,7 @@
                                         <div
                                             class="w-16 h-12 rounded-lg overflow-hidden border border-gray-200 bg-gray-50 flex items-center justify-center">
                                             @if ($brand->logo)
-                                                <img src="{{ asset('public/storage/brands/' . $brand->logo) }}"
+                                                <img src="{{ asset('storage/app/public/' . $brand->logo) }}"
                                                     alt="{{ $brand->name }}" class="w-full h-full object-contain p-1">
                                             @else
                                                 <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor"

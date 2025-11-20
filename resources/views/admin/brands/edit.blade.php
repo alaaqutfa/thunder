@@ -70,7 +70,7 @@
                                 <div class="mb-4">
                                     <p class="text-sm text-gray-600 mb-2">Current Logo:</p>
                                     <div class="relative inline-block">
-                                        <img src="{{ asset('public/storage/brands/' . $brand->logo) }}"
+                                        <img src="{{ asset('storage/app/public/' . $brand->logo) }}"
                                             alt="{{ $brand->name }}"
                                             class="w-32 h-32 object-contain rounded-lg border border-gray-200 shadow-sm bg-gray-50">
                                     </div>
