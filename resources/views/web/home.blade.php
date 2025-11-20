@@ -292,7 +292,7 @@
                     @foreach ($data['brands'] as $brand)
                         <div class="swiper-slide"
                             style="width:120px; display:flex; align-items:center; justify-content:center;">
-                            <img src="{{ asset('public/storage/brands/' . $brand->logo) }}" alt="{{ $brand->name }}"
+                            <img src="{{ Storage::url('brands/' . $brand->logo) }}" alt="{{ $brand->name }}"
                                 style="max-height:55px; width:auto; opacity:0.8; transition:0.3s;"
                                 onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
                         </div>
@@ -302,7 +302,7 @@
                     @foreach ($data['brands'] as $brand)
                         <div class="swiper-slide"
                             style="width:120px; display:flex; align-items:center; justify-content:center;">
-                            <img src="{{ asset('public/storage/brands/' . $brand->logo) }}" alt="{{ $brand->name }}"
+                            <img src="{{ Storage::url('brands/' . $brand->logo) }}" alt="{{ $brand->name }}"
                                 style="max-height:55px; width:auto; opacity:0.8; transition:0.3s;"
                                 onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
                         </div>
