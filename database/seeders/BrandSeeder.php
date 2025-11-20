@@ -9,15 +9,15 @@ class BrandSeeder extends Seeder
     public function run(): void
     {
         $brands = [
-            ['name' => 'AlFakher', 'logo' => 'alfakher.png', 'link' => null, 'order' => 1],
-            ['name' => 'Infinix', 'logo' => 'infinix.png', 'link' => null, 'order' => 2],
-            ['name' => 'OPPO', 'logo' => 'oppo.png', 'link' => null, 'order' => 3],
-            ['name' => 'Realme', 'logo' => 'realme.png', 'link' => null, 'order' => 4],
-            ['name' => 'Cihan', 'logo' => 'cihan.png', 'link' => null, 'order' => 5],
-            ['name' => 'Ford', 'logo' => 'ford.png', 'link' => null, 'order' => 6],
-            ['name' => 'IDB', 'logo' => 'idb.png', 'link' => null, 'order' => 7],
-            ['name' => 'NBI', 'logo' => 'nbi.png', 'link' => null, 'order' => 8],
-            ['name' => 'Rotana', 'logo' => 'rotana.png', 'link' => null, 'order' => 9],
+            ['name' => 'AlFakher', 'logo' => 'brands/alfakher.png', 'link' => null, 'order' => 1],
+            ['name' => 'Infinix', 'logo' => 'brands/infinix.png', 'link' => null, 'order' => 2],
+            ['name' => 'OPPO', 'logo' => 'brands/oppo.png', 'link' => null, 'order' => 3],
+            ['name' => 'Realme', 'logo' => 'brands/realme.png', 'link' => null, 'order' => 4],
+            ['name' => 'Cihan', 'logo' => 'brands/cihan.png', 'link' => null, 'order' => 5],
+            ['name' => 'Ford', 'logo' => 'brands/ford.png', 'link' => null, 'order' => 6],
+            ['name' => 'IDB', 'logo' => 'brands/idb.png', 'link' => null, 'order' => 7],
+            ['name' => 'NBI', 'logo' => 'brands/nbi.png', 'link' => null, 'order' => 8],
+            ['name' => 'Rotana', 'logo' => 'brands/rotana.png', 'link' => null, 'order' => 9],
         ];
 
         foreach ($brands as $brand) {
