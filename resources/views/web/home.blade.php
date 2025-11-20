@@ -7,6 +7,7 @@
 @endpush
 
 @section('content')
+
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
@@ -97,6 +98,14 @@
 
     </section><!-- /What We Do Section -->
 
+    <!-- Video -->
+    <article data-aos="fade-up">
+        <video autoplay muted loop id="heroVideo" style="width:100%; object-fit:cover;">
+            <source src="{{ asset($data['heroVideo'] ?? 'public/assets/video/thunder-motion.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </article><!-- End Video -->
+
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section">
 
@@ -121,8 +130,9 @@
                 <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
                     @foreach ($data['featuredProjects'] as $project)
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item {{ $project->service->slug }}">
-                            <img src="{{ asset('public/storage/' . $project->main_image) }}" class="img-fluid object-contain"
-                                style="max-height:300px; width:auto; transition:0.3s;" alt="{{ $project->name }} Project">
+                            <img src="{{ asset('public/storage/' . $project->main_image) }}"
+                                class="img-fluid object-contain" style="max-height:300px; width:auto; transition:0.3s;"
+                                alt="{{ $project->name }} Project">
                             <div class="portfolio-info">
                                 <h4>{{ $project->name }}</h4>
                                 <p>{{ $project->description }}</p>
@@ -149,6 +159,14 @@
         </div>
 
     </section><!-- /Portfolio Section -->
+
+    <!-- Video -->
+    <article data-aos="fade-up">
+        <video autoplay muted loop id="heroVideo" style="width:100%; object-fit:cover;">
+            <source src="{{ asset($data['heroVideo'] ?? 'public/assets/video/thunder-print.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </article><!-- End Video -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section light-background">
