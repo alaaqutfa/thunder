@@ -29,6 +29,7 @@
     <!-- Main CSS File -->
     <link rel="stylesheet" href="{{ asset('public/assets/css/app.css') }}">
     <link href="{{ asset('public/assets/css/main.css') }}" rel="stylesheet">
+    @stack('css')
 
 </head>
 
@@ -72,7 +73,7 @@
     <!-- Main JS File -->
     <script src="{{ asset('public/assets/js/main.js') }}"></script>
     <script src="{{ asset('public/assets/js/app.js') }}"></script>
-
+    @stack('script')
 </body>
 
 </html>

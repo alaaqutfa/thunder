@@ -27,6 +27,11 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="{{ route('admin.brands.index') }}">
+                                        Brands Management
+                                    </a>
+                                </li>
+                                <li>
                                     <form method="POST" action="{{ route('logout') }}" class="d-inline">
                                         @csrf
                                         <button type="submit" class="w-full">

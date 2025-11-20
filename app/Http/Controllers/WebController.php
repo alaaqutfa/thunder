@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\BusinessSetting;
 use App\Models\Project;
 use App\Models\Service;
@@ -12,7 +13,7 @@ class WebController extends Controller
     {
         $data = [
             'companyName'      => BusinessSetting::getValue('company_name'),
-            'identity_name'      => BusinessSetting::getValue('identity_name'),
+            'identity_name'    => BusinessSetting::getValue('identity_name'),
             'tagline'          => BusinessSetting::getValue('tagline'),
             'aboutTitle'       => BusinessSetting::getValue('about_title'),
             'aboutContent'     => BusinessSetting::getValue('about_content'),
@@ -25,6 +26,9 @@ class WebController extends Controller
                 ->paginate(6),
             'contactPhone'     => BusinessSetting::getValue('contact_phone'),
             'contactEmail'     => BusinessSetting::getValue('contact_email'),
+            'brands'           => Brand::where('status', 1)
+                ->orderBy('id', 'ASC')
+                ->get(),
         ];
 
         return view('web.home', compact('data'));

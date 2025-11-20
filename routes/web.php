@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ProjectController;
 
 require __DIR__ . '/auth.php';
 
@@ -21,9 +22,16 @@ Route::prefix('services')->as('services.')->group(function () {
 
 Route::prefix('admin')->as('admin.')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+
+    // Projects
     Route::resource('projects', ProjectController::class);
     Route::post('projects/{project}/toggle-status', [ProjectController::class, 'toggleStatus'])
         ->name('projects.toggle-status');
     Route::delete('projects/{project}/gallery-image/{imageIndex}', [ProjectController::class, 'removeGalleryImage'])
         ->name('projects.remove-gallery-image');
+
+    // Brands
+    Route::resource('brands', BrandController::class);
+    Route::post('brands/{brand}/toggle-status', [BrandController::class, 'toggleStatus'])
+        ->name('brands.toggle-status');
 });

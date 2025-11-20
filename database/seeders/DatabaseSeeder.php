@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
             BusinessSettingsSeeder::class,
             ServicesSeeder::class,
             ProjectsSeeder::class,
+            BrandSeeder::class,
         ]);
     }
 }

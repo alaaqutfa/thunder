@@ -151,7 +151,7 @@ class RolePermissionSeeder extends Seeder
                 'view_profile',
                 'edit_profile',
                 'change_password',
-                'view_dashboard'
+                'view_dashboard',
             ])
             ->pluck('id');
 
@@ -178,7 +178,7 @@ class RolePermissionSeeder extends Seeder
                 'view_profile',
                 'edit_profile',
                 'change_password',
-                'view_dashboard'
+                'view_dashboard',
             ])
             ->pluck('id');
 
@@ -201,7 +201,7 @@ class RolePermissionSeeder extends Seeder
                 'view_profile',
                 'edit_profile',
                 'change_password',
-                'view_dashboard'
+                'view_dashboard',
             ])
             ->pluck('id');
 

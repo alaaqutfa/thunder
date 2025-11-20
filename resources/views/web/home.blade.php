@@ -260,8 +260,64 @@
 
     </section><!-- /Testimonials Section -->
 
+    <!-- Partners Section -->
+    <section id="partners" class="testimonials section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Our Partners</h2>
+            <p>Brands who trust AlRaad to deliver quality and innovation.</p>
+        </div>
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 4000,
+              "autoplay": {
+                "delay": 0,
+                "disableOnInteraction": false
+              },
+              "slidesPerView": "auto",
+              "centeredSlides": false,
+              "spaceBetween": 30,
+              "freeMode": true
+            }
+            </script>
+
+                <div class="swiper-wrapper">
+
+                    @foreach ($data['brands'] as $brand)
+                        <div class="swiper-slide"
+                            style="width:120px; display:flex; align-items:center; justify-content:center;">
+                            <img src="{{ asset('public/storage/brands/' . $brand->logo) }}" alt="{{ $brand->name }}"
+                                style="max-height:55px; width:auto; opacity:0.8; transition:0.3s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+                        </div>
+                    @endforeach
+
+                    {{-- تكرار الشعارات لعمل تأثير الحركة المستمرة --}}
+                    @foreach ($data['brands'] as $brand)
+                        <div class="swiper-slide"
+                            style="width:120px; display:flex; align-items:center; justify-content:center;">
+                            <img src="{{ asset('public/storage/brands/' . $brand->logo) }}" alt="{{ $brand->name }}"
+                                style="max-height:55px; width:auto; opacity:0.8; transition:0.3s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- /Partners Section -->
+
     <!-- Team Section -->
-    <section class="team-15 team section" id="team">
+    <section class="team-15 team section light-background" id="team">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">

@@ -1,4 +1,5 @@
 @import "design/auth.css";
+@import "design/brand.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
