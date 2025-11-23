@@ -284,7 +284,9 @@
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Our Partners</h2>
-            <p>Brands who trust AlRaad to deliver quality and innovation.</p>
+            <p>
+                Brands who trust AlRaad to deliver quality and innovation.
+            </p>
         </div>
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">

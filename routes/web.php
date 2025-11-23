@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,12 @@ Route::prefix('admin')->as('admin.')->middleware(['auth', 'admin'])->group(funct
         ->name('projects.toggle-status');
     Route::delete('projects/{project}/gallery-image/{imageIndex}', [ProjectController::class, 'removeGalleryImage'])
         ->name('projects.remove-gallery-image');
+
+    // Services
+    Route::resource('services', ServiceController::class);
+    Route::post('services/{service}/toggle', [ServiceController::class, 'toggle'])->name('services.toggle');
+    Route::post('services/update-order', [ServiceController::class, 'updateOrder'])->name('services.update-order');
+    Route::delete('services/{service}/delete-image', [ServiceController::class, 'deleteImage'])->name('services.delete-image');
 
     // Brands
     Route::resource('brands', BrandController::class);

@@ -27,6 +27,11 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="{{ route('admin.services.index') }}">
+                                        Services Management
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="{{ route('admin.brands.index') }}">
                                         Brands Management
                                     </a>
@@ -87,6 +92,12 @@
                 <li>
                     <a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">
                         Contact
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ asset('public/assets/pdf/AlRaad Profile 2025.pdf') }}" class="gap-1" download>
+                        <i class="bi bi-filetype-pdf"></i>
+                        <span>Download Catalog</span>
                     </a>
                 </li>
             </ul>

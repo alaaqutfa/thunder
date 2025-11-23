@@ -144,7 +144,7 @@ class WebController extends Controller
             'totalProjects' => $projects->total(),
         ];
 
-        return view('web.services.details', $data);
+        return view('web.services.details', compact('data'));
     }
 
     /**
