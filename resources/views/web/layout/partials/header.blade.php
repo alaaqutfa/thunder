@@ -37,11 +37,15 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="{{ route('admin.staff.index') }}">
+                                        Staff Management
+                                    </a>
+                                </li>
+                                <li>
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
                                         <button type="submit"
-                                            class="dropdown-item w-full flex items-center gap-2 text-start" onclick="location.reload()">
-
+                                            class="dropdown-item w-full flex items-center gap-2 text-start">
                                             <i class="bi bi-box-arrow-right"></i>
                                             Log out
                                         </button>

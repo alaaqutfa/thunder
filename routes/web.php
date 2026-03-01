@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,4 +42,13 @@ Route::prefix('admin')->as('admin.')->middleware(['auth', 'admin'])->group(funct
     Route::resource('brands', BrandController::class);
     Route::post('brands/{brand}/toggle-status', [BrandController::class, 'toggleStatus'])
         ->name('brands.toggle-status');
+
+    // Staff
+    Route::get('staff', [StaffController::class, 'index'])->name('staff.index');
+    Route::post('staff/{staff}/toggle-status', [StaffController::class, 'toggleStatus'])->name('staff.toggle-status');
+    Route::get('staff/create', [StaffController::class, 'create'])->name('staff.create');
+    Route::post('staff', [StaffController::class, 'store'])->name('staff.store');
+    Route::get('staff/{staff}/edit', [StaffController::class, 'edit'])->name('staff.edit');
+    Route::put('staff/{staff}', [StaffController::class, 'update'])->name('staff.update');
+    Route::delete('staff/{staff}', [StaffController::class, 'destroy'])->name('staff.destroy');
 });

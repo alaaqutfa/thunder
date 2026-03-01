@@ -169,7 +169,7 @@
     </article><!-- End Video -->
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section light-background">
+    {{--<section id="testimonials" class="testimonials section light-background">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -276,7 +276,7 @@
 
         </div>
 
-    </section><!-- /Testimonials Section -->
+    </section>--}}<!-- /Testimonials Section -->
 
     <!-- Partners Section -->
     <section id="partners" class="testimonials section">
