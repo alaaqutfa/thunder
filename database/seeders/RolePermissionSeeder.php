@@ -220,7 +220,7 @@ class RolePermissionSeeder extends Seeder
         // Add admin user
         DB::table('users')->insert([
             'name'              => 'System Administrator',
-            'email'             => 'admin@thunder-iq.com',
+            'email'             => 'admin@thunder-iraq.com',
             'password'          => Hash::make('password'),
             'role_id'           => $adminRole->id,
             'phone'             => '+9647722234030',
@@ -233,7 +233,7 @@ class RolePermissionSeeder extends Seeder
         // Add super admin user
         DB::table('users')->insert([
             'name'              => 'Fadi Debs',
-            'email'             => 'fadi@thunder-iq.com',
+            'email'             => 'fadi@thunder-iraq.com',
             'password'          => Hash::make('12345678'), // كلمة السر من 1 إلى 8
             'role_id'           => $superAdminRole->id,
             'phone'             => '+9647722234031',

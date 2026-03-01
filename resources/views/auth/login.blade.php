@@ -62,12 +62,12 @@
             </button>
 
             {{-- Register Link --}}
-            <div class="text-center">
+            {{-- <div class="text-center">
                 <p class="text-sm text-body">
                     Don't have an account?
                     <a href="{{ route('register') }}" class="text-brand hover:underline font-medium">Create One</a>
                 </p>
-            </div>
+            </div> --}}
         </form>
     </div>
 @endsection

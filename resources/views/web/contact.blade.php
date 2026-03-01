@@ -33,7 +33,8 @@
                         <i class="bi bi-telephone flex-shrink-0"></i>
                         <div>
                             <h3>Call Us</h3>
-                            <p>+964 772 223 4030</p>
+                            <p><a href="tel:+9647722234030">+964 772 223 4030</a></p>
+                            <p><a href="tel:+9647822230999">+964 782 223 0999</a></p>
                         </div>
                     </div><!-- End Info Item -->
 
@@ -41,7 +42,9 @@
                         <i class="bi bi-envelope flex-shrink-0"></i>
                         <div>
                             <h3>Email Us</h3>
-                            <p>swatalraadoffice@gmail.com</p>
+                            <p><a href="mailto:swatalraadoffice@gmail.com">swatalraadoffice@gmail.com</a></p>
+                            <p><a href="mailto:info@thunder-iraq.com">info@thunder-iraq.com</a></p>
+                            <p><a href="mailto:sales@thunder-iraq.com">sales@thunder-iraq.com</a></p>
                         </div>
                     </div><!-- End Info Item -->
 

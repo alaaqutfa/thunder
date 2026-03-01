@@ -37,13 +37,13 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                                    <form method="POST" action="{{ route('logout') }}">
                                         @csrf
-                                        <button type="submit" class="w-full">
-                                            <a href="#" style="justify-content: flex-start;gap: 0.5rem;">
-                                                <i class="bi bi-box-arrow-right"></i>
-                                                Log out
-                                            </a>
+                                        <button type="submit"
+                                            class="dropdown-item w-full flex items-center gap-2 text-start" onclick="location.reload()">
+
+                                            <i class="bi bi-box-arrow-right"></i>
+                                            Log out
                                         </button>
                                     </form>
                                 </li>

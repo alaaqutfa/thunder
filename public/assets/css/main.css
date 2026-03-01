@@ -1,6 +1,7 @@
 /* Fonts */
 :root {
-    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+    --default-font:
+        "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
         "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
@@ -265,7 +266,8 @@ h6 {
         min-width: 200px;
     }
 
-    .navmenu .dropdown ul a {
+    .navmenu .dropdown ul a,
+    .navmenu .dropdown ul button {
         padding: 10px 20px;
         margin: 0;
         font-size: 15px;
@@ -273,13 +275,15 @@ h6 {
         color: var(--nav-dropdown-color);
     }
 
-    .navmenu .dropdown ul a i {
+    .navmenu .dropdown ul a i,
+    .navmenu .dropdown ul button i {
         font-size: 12px;
     }
 
     .navmenu .dropdown ul a:hover,
     .navmenu .dropdown ul .active:hover,
-    .navmenu .dropdown ul li:hover > a {
+    .navmenu .dropdown ul li:hover > a,
+    .navmenu .dropdown ul li:hover button {
         color: var(--contrast-color);
         background-color: var(--nav-hover-color);
     }
