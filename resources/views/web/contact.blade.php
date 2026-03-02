@@ -42,7 +42,7 @@
                         <i class="bi bi-envelope flex-shrink-0"></i>
                         <div>
                             <h3>Email Us</h3>
-                            <p><a href="mailto:swatThunderoffice@gmail.com">swatThunderoffice@gmail.com</a></p>
+                            {{-- <p><a href="mailto:swatThunderoffice@gmail.com">swatThunderoffice@gmail.com</a></p> --}}
                             <p><a href="mailto:info@thunder-iraq.com">info@thunder-iraq.com</a></p>
                             <p><a href="mailto:sales@thunder-iraq.com">sales@thunder-iraq.com</a></p>
                         </div>

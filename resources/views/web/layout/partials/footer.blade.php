@@ -50,15 +50,19 @@
                 <h4>Contact Us</h4>
                 <p>Baghdad - Al Dawra, Iraq</p>
                 <p>Erbil - Gazna Road, Iraq</p>
-                <p class="mt-4"><strong>Phone:</strong> <span>+964 772 223 4030</span></p>
-                <p><strong>Email:</strong> <span>swatThunderoffice@gmail.com</span></p>
+                <p class="mt-4"><strong>Phone:</strong></p>
+                <p><span><a href="tel:009647722234030">+964 772 223 4030</a></span></p>
+                <p><span><a href="tel:009647822230999">+964 782 223 0999</a></span></p>
+                <p><strong>Email:</strong></p>
+                <p><span><a href="mailto:info@thunder-iraq.com">info@thunder-iraq.com</a></span></p>
+                <p><span><a href="mailto:sales@thunder-iraq.com">sales@thunder-iraq.com</a></span></p>
             </div>
 
         </div>
     </div>
 
     <div class="container text-center mt-4">
-        <p>&copy; 2025 <strong>Thunder</strong>. All Rights Reserved.</p>
+        <p>&copy; 2026 <strong>Thunder</strong>. All Rights Reserved.</p>
     </div>
 
 </footer><!-- /Footer -->
