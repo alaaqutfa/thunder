@@ -12,7 +12,7 @@
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>About Us</h2>
-            <p>AlRaad stands out as your premier partner for full-spectrum advertising and production services.</p>
+            <p>Thunder stands out as your premier partner for full-spectrum advertising and production services.</p>
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -20,7 +20,7 @@
             <div class="row gy-3">
 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <img src="{{ asset('public/assets/img/about.jpg') }}" alt="AlRaad Advertising" class="img-fluid">
+                    <img src="{{ asset('public/assets/img/about.jpg') }}" alt="Thunder Advertising" class="img-fluid">
                 </div>
 
                 <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
@@ -51,7 +51,7 @@
                             </li>
                         </ul>
                         <p>
-                            At AlRaad, every project reflects our commitment to excellence, creativity, and customer
+                            At Thunder, every project reflects our commitment to excellence, creativity, and customer
                             satisfaction.
                         </p>
                     </div>

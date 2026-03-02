@@ -3,8 +3,8 @@
 
         <a href="{{ route('home') }}" class="logo d-flex align-items-center me-auto me-xl-0">
             <!-- Uncomment the line below if you also wish to use an image logo -->
-            <img src="{{ asset('public/assets/img/logo.png') }}" alt="AlRaad Logo" />
-            <h1 class="sitename">AlRaad</h1>
+            <img src="{{ asset('public/assets/img/logo.png') }}" alt="Thunder Logo" />
+            <h1 class="sitename">Thunder</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -99,7 +99,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ asset('public/assets/pdf/AlRaad Profile 2025.pdf') }}" class="gap-1" download>
+                    <a href="{{ asset('public/assets/pdf/profile.pdf') }}" class="gap-1" download>
                         <i class="bi bi-filetype-pdf"></i>
                         <span>Download Catalog</span>
                     </a>
@@ -111,10 +111,9 @@
 
 
         <div class="header-social-links">
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.tiktok.com/@thunder.co0" class="tiktok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://www.instagram.com/thunder.co0/" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100085399755202" class="facebook"><i class="bi bi-facebook"></i></a>
         </div>
 
     </div>

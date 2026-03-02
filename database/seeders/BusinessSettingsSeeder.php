@@ -11,13 +11,13 @@ class BusinessSettingsSeeder extends Seeder
         $settings = [
             [
                 'type'       => 'company_name',
-                'value'      => 'AlRaad',
+                'value'      => 'Thunder',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'type'       => 'identity_name',
-                'value'      => 'AlRaad - Thunder',
+                'value'      => 'Thunder',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -41,7 +41,7 @@ class BusinessSettingsSeeder extends Seeder
             ],
             [
                 'type'       => 'about_content',
-                'value'      => 'AlRaad stands out as your premier partner for full-spectrum advertising and production services. Our expertise extends far beyond event execution and direct marketing—we deliver innovative, all-in-one solutions paired with creative consultancy to transform your ideas into reality.',
+                'value'      => 'Thunder stands out as your premier partner for full-spectrum advertising and production services. Our expertise extends far beyond event execution and direct marketing—we deliver innovative, all-in-one solutions paired with creative consultancy to transform your ideas into reality.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -53,7 +53,7 @@ class BusinessSettingsSeeder extends Seeder
             ],
             [
                 'type'       => 'mission_content',
-                'value'      => 'We are dedicated to making a significant impact on our customers, vendors, and employees through our professional skills. With extensive experience in branding, events, launches, signage, printing, and interior design, AlRaad is equipped to handle all your advertising needs. Our deep expertise is evident in every project we complete.',
+                'value'      => 'We are dedicated to making a significant impact on our customers, vendors, and employees through our professional skills. With extensive experience in branding, events, launches, signage, printing, and interior design, Thunder is equipped to handle all your advertising needs. Our deep expertise is evident in every project we complete.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -65,7 +65,7 @@ class BusinessSettingsSeeder extends Seeder
             ],
             [
                 'type'       => 'coverage_content',
-                'value'      => 'From city limits to limitless skies, AlRaad\'s teams cover every corner of Iraq!',
+                'value'      => 'From city limits to limitless skies, Thunder\'s teams cover every corner of Iraq!',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -83,7 +83,7 @@ class BusinessSettingsSeeder extends Seeder
             ],
             [
                 'type'       => 'contact_email',
-                'value'      => 'swatalraadoffice@gmail.com',
+                'value'      => 'swatThunderoffice@gmail.com',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

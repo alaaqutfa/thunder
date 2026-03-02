@@ -10,18 +10,18 @@
   "use strict";
 
   var data = {
-    "company": "AlRaad",
+    "company": "Thunder",
     "identity": {
       "name": "الرعد (Thunder)",
       "tagline": "for contracting & advertising"
     },
     "about": {
       "title": "Who are we",
-      "content": "AlRaad stands out as your premier partner for full-spectrum advertising and production services. Our expertise extends far beyond event execution and direct marketing—we deliver innovative, all-in-one solutions paired with creative consultancy to transform your ideas into reality."
+      "content": "Thunder stands out as your premier partner for full-spectrum advertising and production services. Our expertise extends far beyond event execution and direct marketing—we deliver innovative, all-in-one solutions paired with creative consultancy to transform your ideas into reality."
     },
     "mission": {
       "title": "Our Mission",
-      "content": "We are dedicated to making a significant impact on our customers, vendors, and employees through our professional skills. With extensive experience in branding, events, launches, signage, printing, and interior design, AlRaad is equipped to handle all your advertising needs. Our deep expertise is evident in every project we complete."
+      "content": "We are dedicated to making a significant impact on our customers, vendors, and employees through our professional skills. With extensive experience in branding, events, launches, signage, printing, and interior design, Thunder is equipped to handle all your advertising needs. Our deep expertise is evident in every project we complete."
     },
     "services": [
       "Signboard",
@@ -33,7 +33,7 @@
     ],
     "coverage": {
       "title": "Where do we serve?",
-      "content": "From city limits to limitless skies, AlRaad's teams cover every corner of Iraq!",
+      "content": "From city limits to limitless skies, Thunder's teams cover every corner of Iraq!",
       "locations": [
         "Erbil - Gazna Road",
         "Baghdad - Al Dawra"
@@ -45,7 +45,7 @@
     },
     "contact": {
       "phone": "07722234030",
-      "email": "swatalraadoffice@gmail.com"
+      "email": "swatThunderoffice@gmail.com"
     }
   };
 

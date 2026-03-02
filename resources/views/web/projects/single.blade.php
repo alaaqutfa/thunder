@@ -78,7 +78,7 @@
                         {{-- <div class="testimonial-item">
                             <p>
                                 <i class="bi bi-quote quote-icon-left"></i>
-                                <span>“AlRaad transformed our business front with professional signage and branding. The
+                                <span>“Thunder transformed our business front with professional signage and branding. The
                                     results
                                     exceeded expectations and attracted more customers.”</span>
                                 <i class="bi bi-quote quote-icon-right"></i>
@@ -93,7 +93,7 @@
 
                         <p>
                             Every detail was carefully executed to reflect the client’s vision. The project demonstrates
-                            AlRaad’s commitment to excellence, creativity, and customer satisfaction.
+                            Thunder’s commitment to excellence, creativity, and customer satisfaction.
                         </p> --}}
                     </div>
                 </div>
@@ -106,7 +106,7 @@
                             <li><strong>Client</strong> {{ $data['project']->client_name ?? "" }}</li>
                             <li><strong>Project Date</strong> {{ $data['project']->project_date ? $data['project']->project_date->format('d F, Y') : "" }}</li>
                             <li><strong>Project Location</strong> {{ $data['project']->project_location ?? "" }}</li>
-                            {{-- <li><strong>Project URL</strong> <a href="#">www.alraad-project.com</a></li> --}}
+                            {{-- <li><strong>Project URL</strong> <a href="#">www.Thunder-project.com</a></li> --}}
                             <li><a href="{{ $data['project']->project_url ?? "#" }}" class="btn-visit align-self-start">Project URL</a></li>
                         </ul>
                     </div>

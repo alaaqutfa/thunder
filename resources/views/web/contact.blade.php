@@ -12,7 +12,7 @@
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Contact Us</h2>
-            <p>Get in touch with AlRaad for contracting & advertising solutions across Iraq.</p>
+            <p>Get in touch with Thunder for contracting & advertising solutions across Iraq.</p>
         </div><!-- End Section Title -->
 
         <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
@@ -42,7 +42,7 @@
                         <i class="bi bi-envelope flex-shrink-0"></i>
                         <div>
                             <h3>Email Us</h3>
-                            <p><a href="mailto:swatalraadoffice@gmail.com">swatalraadoffice@gmail.com</a></p>
+                            <p><a href="mailto:swatThunderoffice@gmail.com">swatThunderoffice@gmail.com</a></p>
                             <p><a href="mailto:info@thunder-iraq.com">info@thunder-iraq.com</a></p>
                             <p><a href="mailto:sales@thunder-iraq.com">sales@thunder-iraq.com</a></p>
                         </div>

@@ -169,12 +169,12 @@
     </article><!-- End Video -->
 
     <!-- Testimonials Section -->
-    {{--<section id="testimonials" class="testimonials section light-background">
+    {{-- <section id="testimonials" class="testimonials section light-background">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Testimonials</h2>
-            <p>What our clients say about AlRaad’s services and expertise.</p>
+            <p>What our clients say about Thunder’s services and expertise.</p>
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -220,7 +220,7 @@
                             </div>
                             <p>
                                 <i class="bi bi-quote quote-icon-left"></i>
-                                <span>AlRaad transformed our store with stunning signboards and branding. Customers
+                                <span>Thunder transformed our store with stunning signboards and branding. Customers
                                     immediately
                                     noticed the difference!</span>
                                 <i class="bi bi-quote quote-icon-right"></i>
@@ -262,7 +262,7 @@
                             </div>
                             <p>
                                 <i class="bi bi-quote quote-icon-left"></i>
-                                <span>AlRaad’s digital printing and branding services gave our campaign a fresh,
+                                <span>Thunder’s digital printing and branding services gave our campaign a fresh,
                                     modern look that
                                     resonated with our audience.</span>
                                 <i class="bi bi-quote quote-icon-right"></i>
@@ -276,7 +276,7 @@
 
         </div>
 
-    </section>--}}<!-- /Testimonials Section -->
+    </section> --}}<!-- /Testimonials Section -->
 
     <!-- Partners Section -->
     <section id="partners" class="testimonials section">
@@ -285,7 +285,7 @@
         <div class="container section-title" data-aos="fade-up">
             <h2>Our Partners</h2>
             <p>
-                Brands who trust AlRaad to deliver quality and innovation.
+                Brands who trust Thunder to deliver quality and innovation.
             </p>
         </div>
 
@@ -342,7 +342,7 @@
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Our Team</h2>
-            <p>Meet the professionals behind AlRaad’s success in advertising and contracting.</p>
+            <p>Meet the professionals behind Thunder’s success in advertising and contracting.</p>
         </div><!-- End Section Title -->
 
         <div class="content">
@@ -356,11 +356,14 @@
                             <figure>
                                 <img src="{{ asset('public/assets/img/team/team-1.png') }}" alt="Joshua Stefan"
                                     class="img-fluid">
-                                <div class="social">
-                                    <a href="#"><span class="bi bi-facebook"></span></a>
-                                    <a href="#"><span class="bi bi-twitter-x"></span></a>
-                                    <a href="#"><span class="bi bi-linkedin"></span></a>
-                                </div>
+                                {{-- <div class="social">
+                                    <a href="https://www.tiktok.com/@thunder.co0" class="tiktok"><i
+                                            class="bi bi-tiktok"></i></a>
+                                    <a href="https://www.instagram.com/thunder.co0/" class="instagram"><i
+                                            class="bi bi-instagram"></i></a>
+                                    <a href="https://www.facebook.com/profile.php?id=100085399755202" class="facebook"><i
+                                            class="bi bi-facebook"></i></a>
+                                </div> --}}
                             </figure>
                             <div class="person-contents">
                                 <h3>Mohamed Raad Mohamed</h3>
@@ -374,11 +377,14 @@
                             <figure>
                                 <img src="{{ asset('public/assets/img/team/team-2.png') }}" alt="Sheena Anderson"
                                     class="img-fluid">
-                                <div class="social">
-                                    <a href="#"><span class="bi bi-facebook"></span></a>
-                                    <a href="#"><span class="bi bi-twitter-x"></span></a>
-                                    <a href="#"><span class="bi bi-linkedin"></span></a>
-                                </div>
+                                {{-- <div class="social">
+                                    <a href="https://www.tiktok.com/@thunder.co0" class="tiktok"><i
+                                            class="bi bi-tiktok"></i></a>
+                                    <a href="https://www.instagram.com/thunder.co0/" class="instagram"><i
+                                            class="bi bi-instagram"></i></a>
+                                    <a href="https://www.facebook.com/profile.php?id=100085399755202" class="facebook"><i
+                                            class="bi bi-facebook"></i></a>
+                                </div> --}}
                             </figure>
                             <div class="person-contents">
                                 <h3>Fadi Debs</h3>
@@ -392,11 +398,14 @@
                             <figure>
                                 <img src="{{ asset('public/assets/img/team/team-3.png') }}" alt="Evan Smith"
                                     class="img-fluid">
-                                <div class="social">
-                                    <a href="#"><span class="bi bi-facebook"></span></a>
-                                    <a href="#"><span class="bi bi-twitter-x"></span></a>
-                                    <a href="#"><span class="bi bi-linkedin"></span></a>
-                                </div>
+                                {{-- <div class="social">
+                                    <a href="https://www.tiktok.com/@thunder.co0" class="tiktok"><i
+                                            class="bi bi-tiktok"></i></a>
+                                    <a href="https://www.instagram.com/thunder.co0/" class="instagram"><i
+                                            class="bi bi-instagram"></i></a>
+                                    <a href="https://www.facebook.com/profile.php?id=100085399755202" class="facebook"><i
+                                            class="bi bi-facebook"></i></a>
+                                </div> --}}
                             </figure>
                             <div class="person-contents">
                                 <h3>Ahmad Khayat</h3>

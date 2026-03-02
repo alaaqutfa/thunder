@@ -47,11 +47,11 @@
                     <div class="service-box">
                         <h4>Download Catalog</h4>
                         <div class="download-catalog">
-                            <a href="{{ asset('public/assets/pdf/AlRaad Profile 2025.pdf') }}" download>
+                            <a href="{{ asset('public/assets/pdf/profile.pdf') }}" download>
                                 <i class="bi bi-filetype-pdf"></i>
                                 <span>Catalog PDF</span>
                             </a>
-                            {{-- <a href="assets/catalog/AlRaad-Catalog.doc">
+                            {{-- <a href="assets/catalog/Thunder-Catalog.doc">
                                 <i class="bi bi-file-earmark-word"></i>
                                 <span>Catalog DOC</span>
                             </a> --}}
@@ -67,7 +67,7 @@
                         </p>
                         <p class="d-flex align-items-center mt-1 mb-0">
                             <i class="bi bi-envelope me-2"></i>
-                            <a href="mailto:swatalraadoffice@gmail.com">swatalraadoffice@gmail.com</a>
+                            <a href="mailto:swatThunderoffice@gmail.com">swatThunderoffice@gmail.com</a>
                         </p>
                     </div><!-- End Help Box -->
 
@@ -78,7 +78,7 @@
                     <div class="service-details-content">
                         <h3>Our Expertise</h3>
                         <p>
-                            AlRaad delivers innovative advertising and contracting solutions across Iraq. From creative
+                            Thunder delivers innovative advertising and contracting solutions across Iraq. From creative
                             branding
                             and digital printing to booths, kiosks, and interior design, our team ensures every project
                             reflects

@@ -5,16 +5,18 @@
 
             <div class="col-lg-5 col-md-12 footer-about">
                 <a href="{{ route('home') }}" class="logo d-flex align-items-center">
-                    <span class="sitename">AlRaad</span>
+                    <span class="sitename">Thunder</span>
                 </a>
-                <p>AlRaad is your trusted partner for contracting & advertising solutions, delivering creative
+                <p>Thunder is your trusted partner for contracting & advertising solutions, delivering creative
                     branding,
                     signage, events, and interior design services across Iraq.</p>
                 <div class="social-links d-flex mt-4">
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://www.tiktok.com/@thunder.co0" class="tiktok"><i class="bi bi-tiktok"></i></a>
+                    <a href="https://www.instagram.com/thunder.co0/" class="instagram">
+                        <i class="bi bi-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100085399755202" class="facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
                 </div>
             </div>
 
@@ -48,14 +50,14 @@
                 <p>Baghdad - Al Dawra, Iraq</p>
                 <p>Erbil - Gazna Road, Iraq</p>
                 <p class="mt-4"><strong>Phone:</strong> <span>+964 772 223 4030</span></p>
-                <p><strong>Email:</strong> <span>swatalraadoffice@gmail.com</span></p>
+                <p><strong>Email:</strong> <span>swatThunderoffice@gmail.com</span></p>
             </div>
 
         </div>
     </div>
 
     <div class="container text-center mt-4">
-        <p>&copy; 2025 <strong>AlRaad</strong>. All Rights Reserved.</p>
+        <p>&copy; 2025 <strong>Thunder</strong>. All Rights Reserved.</p>
     </div>
 
 </footer><!-- /Footer -->

@@ -1,17 +1,17 @@
 {
-    "company": "AlRaad",
+    "company": "Thunder",
     "identity": {
         "name": "الرعد (Thunder)",
         "tagline": "for contracting & advertising"
     },
     "about": {
         "title": "Who are we",
-        "content": "AlRaad stands out as your premier partner for full-spectrum advertising and production services. Our expertise extends far beyond event execution and direct marketing—we deliver innovative, all-in-one solutions paired with creative consultancy to transform your ideas into reality."
+        "content": "Thunder stands out as your premier partner for full-spectrum advertising and production services. Our expertise extends far beyond event execution and direct marketing—we deliver innovative, all-in-one solutions paired with creative consultancy to transform your ideas into reality."
     },
     "mission": [
         {
             "title": "Our Mission",
-            "content": "We are dedicated to making a significant impact on our customers, vendors, and employees through our professional skills. With extensive experience in branding, events, launches, signage, printing, and interior design, AlRaad is equipped to handle all your advertising needs. Our deep expertise is evident in every project we complete."
+            "content": "We are dedicated to making a significant impact on our customers, vendors, and employees through our professional skills. With extensive experience in branding, events, launches, signage, printing, and interior design, Thunder is equipped to handle all your advertising needs. Our deep expertise is evident in every project we complete."
         },
         {
             "title": "Innovative Branding",
@@ -91,7 +91,7 @@
         {
             "name": "Ahmed Saleh",
             "role": "Retail Business Owner",
-            "quote": "AlRaad transformed our store with stunning signboards and branding. Customers immediately noticed the difference!"
+            "quote": "Thunder transformed our store with stunning signboards and branding. Customers immediately noticed the difference!"
         },
         {
             "name": "Layla Hassan",
@@ -101,7 +101,7 @@
         {
             "name": "Omar Khalid",
             "role": "Marketing Director",
-            "quote": "AlRaad’s digital printing and branding services gave our campaign a fresh, modern look that resonated with our audience."
+            "quote": "Thunder’s digital printing and branding services gave our campaign a fresh, modern look that resonated with our audience."
         }
     ],
     "team": [
@@ -112,7 +112,7 @@
     ],
     "coverage": {
         "title": "Where do we serve?",
-        "content": "From city limits to limitless skies, AlRaad's teams cover every corner of Iraq!",
+        "content": "From city limits to limitless skies, Thunder's teams cover every corner of Iraq!",
         "locations": ["Erbil - Gazna Road", "Baghdad - Al Dawra"],
         "maps": [
             "https://maps.app.goo.gl/yEAPYT7iNU1zxF5t7",
@@ -121,11 +121,11 @@
     },
     "contact": {
         "phone": "+964 772 223 4030",
-        "email": "swatalraadoffice@gmail.com",
+        "email": "swatThunderoffice@gmail.com",
         "addresses": ["Baghdad - Al Dawra, Iraq", "Erbil - Gazna Road, Iraq"]
     },
     "footer": {
-        "about": "AlRaad is your trusted partner for contracting & advertising solutions, delivering creative branding, signage, events, and interior design services across Iraq.",
+        "about": "Thunder is your trusted partner for contracting & advertising solutions, delivering creative branding, signage, events, and interior design services across Iraq.",
         "social": ["facebook", "instagram", "linkedin", "twitter-x"],
         "useful_links": [
             "Home",
@@ -143,9 +143,9 @@
         ],
         "contact": {
             "phone": "+964 772 223 4030",
-            "email": "swatalraadoffice@gmail.com",
+            "email": "swatThunderoffice@gmail.com",
             "locations": ["Baghdad - Al Dawra", "Erbil - Gazna Road"]
         },
-        "copyright": "© 2025 AlRaad. All Rights Reserved."
+        "copyright": "© 2025 Thunder. All Rights Reserved."
     }
 }
