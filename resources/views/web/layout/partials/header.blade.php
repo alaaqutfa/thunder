@@ -111,6 +111,7 @@
 
 
         <div class="header-social-links">
+            <a href="https://wa.me/9647722234030" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
             <a href="https://www.tiktok.com/@thunder.co0" class="tiktok"><i class="bi bi-tiktok"></i></a>
             <a href="https://www.instagram.com/thunder.co0/" class="instagram"><i class="bi bi-instagram"></i></a>
             <a href="https://www.facebook.com/profile.php?id=100085399755202" class="facebook"><i class="bi bi-facebook"></i></a>
