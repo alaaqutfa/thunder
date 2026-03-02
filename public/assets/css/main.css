@@ -218,6 +218,7 @@ h6 {
     }
 
     .navmenu a,
+    .navmenu button,
     .navmenu a:focus {
         color: var(--nav-color);
         padding: 10px 15px;
@@ -340,6 +341,7 @@ h6 {
     }
 
     .navmenu a,
+    .navmenu button,
     .navmenu a:focus {
         color: var(--nav-dropdown-color);
         padding: 10px 20px;

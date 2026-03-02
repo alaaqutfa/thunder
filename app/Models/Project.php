@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -18,11 +17,15 @@ class Project extends Model
     protected $fillable = [
         'name',
         'description',
+        'project_date',
+        'client_name',
+        'project_location',
+        'project_url',
         'main_image',
         'gallery_images',
         'service_id',
         'order',
-        'is_active'
+        'is_active',
     ];
 
     /**
@@ -32,7 +35,7 @@ class Project extends Model
      */
     protected $hidden = [
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 
     /**
@@ -42,10 +45,11 @@ class Project extends Model
      */
     protected $casts = [
         'gallery_images' => 'array',
-        'order' => 'integer',
-        'is_active' => 'boolean',
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime'
+        'order'          => 'integer',
+        'is_active'      => 'boolean',
+        'project_date'   => 'date',
+        'created_at'     => 'datetime',
+        'updated_at'     => 'datetime',
     ];
 
     /**
@@ -120,7 +124,7 @@ class Project extends Model
     public function getFirstGalleryImageAttribute(): string
     {
         $galleryImages = $this->gallery_images_array;
-        return !empty($galleryImages) ? $galleryImages[0] : $this->main_image;
+        return ! empty($galleryImages) ? $galleryImages[0] : $this->main_image;
     }
 
     /**
@@ -141,8 +145,8 @@ class Project extends Model
      */
     public function addGalleryImage(string $imagePath): void
     {
-        $galleryImages = $this->gallery_images_array;
-        $galleryImages[] = $imagePath;
+        $galleryImages        = $this->gallery_images_array;
+        $galleryImages[]      = $imagePath;
         $this->gallery_images = $galleryImages;
         $this->save();
     }
@@ -156,7 +160,7 @@ class Project extends Model
     public function removeGalleryImage(string $imagePath): void
     {
         $galleryImages = $this->gallery_images_array;
-        $key = array_search($imagePath, $galleryImages);
+        $key           = array_search($imagePath, $galleryImages);
 
         if ($key !== false) {
             unset($galleryImages[$key]);

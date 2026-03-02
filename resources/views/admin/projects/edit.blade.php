@@ -82,6 +82,68 @@
                             @enderror
                         </div>
 
+                        <!-- Project Date & Client Name -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <!-- Project Date -->
+                            <div>
+                                <label for="project_date" class="block text-sm font-medium text-[#384046] mb-2">
+                                    Project Date *
+                                </label>
+                                <input type="date" name="project_date" id="project_date"
+                                    value="{{ old('project_date', $project->project_date ? $project->project_date->format('Y-m-d') : '') }}"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#cc1820] focus:border-[#cc1820] @error('project_date') border-red-500 @enderror"
+                                    required>
+                                @error('project_date')
+                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            <!-- Client Name -->
+                            <div>
+                                <label for="client_name" class="block text-sm font-medium text-[#384046] mb-2">
+                                    Client Name *
+                                </label>
+                                <input type="text" name="client_name" id="client_name"
+                                    value="{{ old('client_name', $project->client_name) }}"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#cc1820] focus:border-[#cc1820] @error('client_name') border-red-500 @enderror"
+                                    required>
+                                @error('client_name')
+                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <!-- Project Location & Project URL -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <!-- Project Location -->
+                            <div>
+                                <label for="project_location" class="block text-sm font-medium text-[#384046] mb-2">
+                                    Project Location *
+                                </label>
+                                <input type="text" name="project_location" id="project_location"
+                                    value="{{ old('project_location', $project->project_location) }}"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#cc1820] focus:border-[#cc1820] @error('project_location') border-red-500 @enderror"
+                                    required>
+                                @error('project_location')
+                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            <!-- Project URL -->
+                            <div>
+                                <label for="project_url" class="block text-sm font-medium text-[#384046] mb-2">
+                                    Project URL *
+                                </label>
+                                <input type="url" name="project_url" id="project_url"
+                                    value="{{ old('project_url', $project->project_url) }}"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#cc1820] focus:border-[#cc1820] @error('project_url') border-red-500 @enderror"
+                                    required>
+                                @error('project_url')
+                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
+
                         <!-- Images Section -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <!-- Main Image -->

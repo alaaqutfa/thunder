@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -39,13 +38,17 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'main_image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'name'             => 'required|string|max:255',
+            'description'      => 'required|string',
+            'main_image'       => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'gallery_images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'service_id' => 'required|exists:services,id',
-            'order' => 'nullable|integer|min:0',
-            'is_active' => 'boolean',
+            'service_id'       => 'required|exists:services,id',
+            'order'            => 'nullable|integer|min:0',
+            'is_active'        => 'boolean',
+            'project_date'     => 'required|date',
+            'client_name'      => 'required|string|max:255',
+            'project_location' => 'required|string|max:255',
+            'project_url'      => 'required|url|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -57,7 +60,7 @@ class ProjectController extends Controller
         // معالجة الصورة الرئيسية
         $mainImagePath = null;
         if ($request->hasFile('main_image')) {
-            $mainImage = $request->file('main_image');
+            $mainImage     = $request->file('main_image');
             $mainImageName = 'project_' . time() . '_' . Str::random(10) . '.' . $mainImage->getClientOriginalExtension();
             $mainImagePath = $mainImage->storeAs('projects', $mainImageName, 'public');
         }
@@ -66,19 +69,23 @@ class ProjectController extends Controller
         $galleryImagesPaths = [];
         if ($request->hasFile('gallery_images')) {
             foreach ($request->file('gallery_images') as $galleryImage) {
-                $galleryImageName = 'gallery_' . time() . '_' . Str::random(10) . '.' . $galleryImage->getClientOriginalExtension();
+                $galleryImageName     = 'gallery_' . time() . '_' . Str::random(10) . '.' . $galleryImage->getClientOriginalExtension();
                 $galleryImagesPaths[] = $galleryImage->storeAs('projects/gallery', $galleryImageName, 'public');
             }
         }
 
         $project = Project::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'main_image' => $mainImagePath,
-            'gallery_images' => $galleryImagesPaths,
-            'service_id' => $request->service_id,
-            'order' => $request->order ?? 0,
-            'is_active' => $request->is_active ?? true,
+            'name'             => $request->name,
+            'description'      => $request->description,
+            'project_date'     => $request->project_date,
+            'client_name'      => $request->client_name,
+            'project_location' => $request->project_location,
+            'project_url'      => $request->project_url,
+            'main_image'       => $mainImagePath,
+            'gallery_images'   => $galleryImagesPaths,
+            'service_id'       => $request->service_id,
+            'order'            => $request->order ?? 0,
+            'is_active'        => $request->is_active ?? true,
         ]);
 
         return redirect()->route('admin.projects.index')
@@ -110,13 +117,17 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'main_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'name'             => 'required|string|max:255',
+            'description'      => 'required|string',
+            'main_image'       => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'gallery_images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'service_id' => 'required|exists:services,id',
-            'order' => 'nullable|integer|min:0',
-            'is_active' => 'boolean',
+            'service_id'       => 'required|exists:services,id',
+            'order'            => 'nullable|integer|min:0',
+            'is_active'        => 'boolean',
+            'project_date'     => 'required|date',
+            'client_name'      => 'required|string|max:255',
+            'project_location' => 'required|string|max:255',
+            'project_url'      => 'required|url|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -133,7 +144,7 @@ class ProjectController extends Controller
                 Storage::disk('public')->delete($project->main_image);
             }
 
-            $mainImage = $request->file('main_image');
+            $mainImage     = $request->file('main_image');
             $mainImageName = 'project_' . time() . '_' . Str::random(10) . '.' . $mainImage->getClientOriginalExtension();
             $mainImagePath = $mainImage->storeAs('projects', $mainImageName, 'public');
         }
@@ -142,19 +153,23 @@ class ProjectController extends Controller
         $galleryImagesPaths = $project->gallery_images ?? [];
         if ($request->hasFile('gallery_images')) {
             foreach ($request->file('gallery_images') as $galleryImage) {
-                $galleryImageName = 'gallery_' . time() . '_' . Str::random(10) . '.' . $galleryImage->getClientOriginalExtension();
+                $galleryImageName     = 'gallery_' . time() . '_' . Str::random(10) . '.' . $galleryImage->getClientOriginalExtension();
                 $galleryImagesPaths[] = $galleryImage->storeAs('projects/gallery', $galleryImageName, 'public');
             }
         }
 
         $project->update([
-            'name' => $request->name,
-            'description' => $request->description,
-            'main_image' => $mainImagePath,
-            'gallery_images' => $galleryImagesPaths,
-            'service_id' => $request->service_id,
-            'order' => $request->order ?? $project->order,
-            'is_active' => $request->is_active ?? $project->is_active,
+            'name'             => $request->name,
+            'description'      => $request->description,
+            'project_date'     => $request->project_date,
+            'client_name'      => $request->client_name,
+            'project_location' => $request->project_location,
+            'project_url'      => $request->project_url,
+            'main_image'       => $mainImagePath,
+            'gallery_images'   => $galleryImagesPaths,
+            'service_id'       => $request->service_id,
+            'order'            => $request->order ?? $project->order,
+            'is_active'        => $request->is_active ?? $project->is_active,
         ]);
 
         return redirect()->route('admin.projects.index')
@@ -218,7 +233,7 @@ class ProjectController extends Controller
     public function toggleStatus(Project $project)
     {
         $project->update([
-            'is_active' => !$project->is_active
+            'is_active' => ! $project->is_active,
         ]);
 
         $status = $project->is_active ? 'activated' : 'deactivated';

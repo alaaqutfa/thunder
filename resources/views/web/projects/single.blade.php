@@ -102,12 +102,12 @@
                     <div class="portfolio-info">
                         <h3>Project Information</h3>
                         <ul>
-                            <li><strong>Category</strong> {{ $data['project']->service->name }}</li>
-                            <li><strong>Client</strong> Local Retail Business</li>
-                            <li><strong>Project Date</strong> 15 June, 2024</li>
-                            <li><strong>Project Location</strong> Baghdad, Iraq</li>
-                            <li><strong>Project URL</strong> <a href="#">www.alraad-project.com</a></li>
-                            <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>
+                            <li><strong>Category</strong> {{ $data['project']->service->name ?? "" }}</li>
+                            <li><strong>Client</strong> {{ $data['project']->client_name ?? "" }}</li>
+                            <li><strong>Project Date</strong> {{ $data['project']->project_date ? $data['project']->project_date->format('d F, Y') : "" }}</li>
+                            <li><strong>Project Location</strong> {{ $data['project']->project_location ?? "" }}</li>
+                            {{-- <li><strong>Project URL</strong> <a href="#">www.alraad-project.com</a></li> --}}
+                            <li><a href="{{ $data['project']->project_url ?? "#" }}" class="btn-visit align-self-start">Project URL</a></li>
                         </ul>
                     </div>
                 </div>
