@@ -336,7 +336,7 @@
     </section>
     <!-- /Partners Section -->
 
-    @forelse($data['teamMembers'] as $member)
+    @if ($data['teamMembers'])
         <!-- Team Section -->
         <section class="team-15 team section light-background" id="team">
             <div class="container section-title" data-aos="fade-up">
@@ -347,32 +347,38 @@
             <div class="content">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="person">
-                                <figure>
-                                    @if ($member->avatar)
-                                        <img src="{{ asset('storage/app/public/' . $member->avatar) }}"
-                                            alt="{{ $member->name }}" class="img-fluid">
-                                    @else
-                                        <div class="w-100 h-100 bg-blue-100 flex items-center justify-center"
-                                            style="min-height: 200px;">
-                                            <span
-                                                class="text-blue-600 font-bold text-4xl">{{ strtoupper(substr($member->name, 0, 1)) }}</span>
-                                        </div>
-                                    @endif
-                                </figure>
-                                <div class="person-contents">
-                                    <h3>{{ $member->name }}</h3>
-                                    <span
-                                        class="position">{{ $member->team_position ?? ($member->role->name ?? 'Team Member') }}</span>
+                        @forelse($data['teamMembers'] as $member)
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="person">
+                                    <figure>
+                                        @if ($member->avatar)
+                                            <img src="{{ asset('storage/app/public/' . $member->avatar) }}"
+                                                alt="{{ $member->name }}" class="img-fluid">
+                                        @else
+                                            <div class="w-100 h-100 bg-blue-100 flex items-center justify-center"
+                                                style="min-height: 200px;">
+                                                <span
+                                                    class="text-blue-600 font-bold text-4xl">{{ strtoupper(substr($member->name, 0, 1)) }}</span>
+                                            </div>
+                                        @endif
+                                    </figure>
+                                    <div class="person-contents">
+                                        <h3>{{ $member->name }}</h3>
+                                        <span
+                                            class="position">{{ $member->team_position ?? ($member->role->name ?? 'Team Member') }}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @empty
+                            <div class="col-12 text-center">
+                                <p>No team members to display.</p>
+                            </div>
+                        @endforelse
                     </div>
                 </div>
             </div>
         </section><!-- /Team Section -->
-    @endforelse
+    @endif
 @endsection
 
 @push('script')
