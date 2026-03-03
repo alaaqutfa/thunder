@@ -11,10 +11,21 @@
             </div>
 
             <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden p-6">
-                <form method="POST" action="{{ route('admin.staff.store') }}">
+                <form method="POST" action="{{ route('admin.staff.store') }}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Avatar -->
+                        <div class="md:col-span-2">
+                            <label for="avatar" class="block text-sm font-medium text-[#384046] mb-2">Profile
+                                Picture</label>
+                            <input type="file" name="avatar" id="avatar" accept="image/*"
+                                class="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#cc1820] focus:ring focus:ring-[#cc1820] focus:ring-opacity-50">
+                            @error('avatar')
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
                         <!-- Name -->
                         <div>
                             <label for="name" class="block text-sm font-medium text-[#384046] mb-2">Full Name</label>
@@ -81,14 +92,40 @@
                                 class="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#cc1820] focus:ring focus:ring-[#cc1820] focus:ring-opacity-50">
                         </div>
 
-                        <!-- Active Status -->
+                        <!-- Active Status & Team Options -->
                         <div class="md:col-span-2">
-                            <label class="flex items-center gap-2">
-                                <input type="checkbox" name="is_active" value="1"
-                                    {{ old('is_active', true) ? 'checked' : '' }}
-                                    class="rounded border-gray-300 text-[#cc1820] shadow-sm focus:border-[#cc1820] focus:ring focus:ring-[#cc1820] focus:ring-opacity-50">
-                                <span class="mr-2 text-sm text-[#384046]">Active Account</span>
-                            </label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Active Account -->
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" name="is_active" value="1"
+                                        {{ old('is_active', true) ? 'checked' : '' }}
+                                        class="rounded border-gray-300 text-[#cc1820] shadow-sm focus:border-[#cc1820] focus:ring focus:ring-[#cc1820] focus:ring-opacity-50">
+                                    <span class="text-sm text-[#384046]">Active Account</span>
+                                </label>
+
+                                <!-- Show in Team -->
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" name="show_in_team" value="1"
+                                        {{ old('show_in_team') ? 'checked' : '' }}
+                                        class="rounded border-gray-300 text-[#cc1820] shadow-sm focus:border-[#cc1820] focus:ring focus:ring-[#cc1820] focus:ring-opacity-50">
+                                    <span class="text-sm text-[#384046]">Show in Team Section</span>
+                                </label>
+                            </div>
+
+                            <!-- Team Position (optional) -->
+                            <div class="mt-4">
+                                <label for="team_position" class="block text-sm font-medium text-[#384046] mb-2">
+                                    Team Position (optional) <span class="text-gray-400 text-xs">– If left empty, the role
+                                        name will be displayed</span>
+                                </label>
+                                <input type="text" name="team_position" id="team_position"
+                                    value="{{ old('team_position') }}"
+                                    class="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#cc1820] focus:ring focus:ring-[#cc1820] focus:ring-opacity-50"
+                                    placeholder="e.g. Creative Director">
+                                @error('team_position')
+                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                @enderror
+                            </div>
                         </div>
                     </div>
 

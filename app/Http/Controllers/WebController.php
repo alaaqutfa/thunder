@@ -5,6 +5,7 @@ use App\Models\Brand;
 use App\Models\BusinessSetting;
 use App\Models\Project;
 use App\Models\Service;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -28,6 +29,11 @@ class WebController extends Controller
             'contactEmail'     => BusinessSetting::getValue('contact_email'),
             'brands'           => Brand::where('status', 1)
                 ->orderBy('id', 'ASC')
+                ->get(),
+            'teamMembers'      => User::where('show_in_team', true)
+                ->where('is_active', true)
+                ->with('role')
+                ->orderBy('name')
                 ->get(),
         ];
 

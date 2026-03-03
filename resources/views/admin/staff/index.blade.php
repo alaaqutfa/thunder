@@ -107,6 +107,9 @@
                                     Last Login</th>
                                 <th
                                     class="px-6 py-4 text-left text-xs font-semibold text-[#384046] uppercase tracking-wider">
+                                    Team</th>
+                                <th
+                                    class="px-6 py-4 text-left text-xs font-semibold text-[#384046] uppercase tracking-wider">
                                     Actions</th>
                             </tr>
                         </thead>
@@ -152,6 +155,23 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                                         {{ $staff_member->last_login_at ? $staff_member->last_login_at->diffForHumans() : 'Never' }}
                                     </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        @if ($staff_member->show_in_team)
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                                Yes
+                                            </span>
+                                            @if ($staff_member->team_position)
+                                                <div class="text-xs text-gray-500 mt-1">
+                                                    {{ Str::limit($staff_member->team_position, 20) }}</div>
+                                            @endif
+                                        @else
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                                No
+                                            </span>
+                                        @endif
+                                    </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         <div class="flex items-center space-x-2">
                                             <!-- Edit -->
@@ -188,9 +208,29 @@
                                                     </svg>
                                                 </button>
                                             </form>
+                                            <!-- Toggle Team Status -->
+                                            <form action="{{ route('admin.staff.toggle-team', $staff_member) }}"
+                                                method="POST" class="inline">
+                                                @csrf
+                                                <button type="submit"
+                                                    class="inline-flex items-center p-2 text-sm font-medium text-center {{ $staff_member->show_in_team ? 'text-blue-700 bg-blue-100 hover:bg-blue-200' : 'text-gray-700 bg-gray-100 hover:bg-gray-200' }} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition-colors duration-200"
+                                                    title="{{ $staff_member->show_in_team ? 'Remove from team' : 'Add to team' }}">
+                                                    <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                        viewBox="0 0 24 24">
+                                                        @if ($staff_member->show_in_team)
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                        @else
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                                        @endif
+                                                    </svg>
+                                                </button>
+                                            </form>
                                             <!-- Delete -->
-                                            <form action="{{ route('admin.staff.destroy', $staff_member) }}" method="POST"
-                                                class="inline">
+                                            <form action="{{ route('admin.staff.destroy', $staff_member) }}"
+                                                method="POST" class="inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" onclick="return confirm('Are you sure?')"

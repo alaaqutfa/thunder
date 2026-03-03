@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -26,7 +25,9 @@ class User extends Authenticatable
         'role_id',
         'phone',
         'avatar',
-        'is_active'
+        'is_active',
+        'show_in_team',
+        'team_position',
     ];
 
     /**
@@ -48,9 +49,9 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-            'last_login_at' => 'datetime',
-            'is_active' => 'boolean',
+            'password'          => 'hashed',
+            'last_login_at'     => 'datetime',
+            'is_active'         => 'boolean',
         ];
     }
 
@@ -129,7 +130,7 @@ class User extends Authenticatable
      */
     public function hasPermission(string $permission): bool
     {
-        if (!$this->role) {
+        if (! $this->role) {
             return false;
         }
 
@@ -167,7 +168,7 @@ class User extends Authenticatable
     public function hasAllPermissions(array $permissions): bool
     {
         foreach ($permissions as $permission) {
-            if (!$this->hasPermission($permission)) {
+            if (! $this->hasPermission($permission)) {
                 return false;
             }
         }

@@ -51,4 +51,5 @@ Route::prefix('admin')->as('admin.')->middleware(['auth', 'admin'])->group(funct
     Route::get('staff/{staff}/edit', [StaffController::class, 'edit'])->name('staff.edit');
     Route::put('staff/{staff}', [StaffController::class, 'update'])->name('staff.update');
     Route::delete('staff/{staff}', [StaffController::class, 'destroy'])->name('staff.destroy');
+    Route::post('staff/{staff}/toggle-team', [StaffController::class, 'toggleTeam'])->name('staff.toggle-team');
 });

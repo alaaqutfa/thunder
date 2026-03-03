@@ -338,88 +338,44 @@
 
     <!-- Team Section -->
     <section class="team-15 team section light-background" id="team">
-
-        <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Our Team</h2>
             <p>Meet the professionals behind Thunder’s success in advertising and contracting.</p>
-        </div><!-- End Section Title -->
-
-        <div class="content">
-
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="person">
-                            <figure>
-                                <img src="{{ asset('public/assets/img/team/team-1.png') }}" alt="Joshua Stefan"
-                                    class="img-fluid">
-                                {{-- <div class="social">
-                                    <a href="https://www.tiktok.com/@thunder.co0" class="tiktok"><i
-                                            class="bi bi-tiktok"></i></a>
-                                    <a href="https://www.instagram.com/thunder.co0/" class="instagram"><i
-                                            class="bi bi-instagram"></i></a>
-                                    <a href="https://www.facebook.com/profile.php?id=100085399755202" class="facebook"><i
-                                            class="bi bi-facebook"></i></a>
-                                </div> --}}
-                            </figure>
-                            <div class="person-contents">
-                                <h3>Mohamed Raad Mohamed</h3>
-                                <span class="position">CEO & Owner</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="person">
-                            <figure>
-                                <img src="{{ asset('public/assets/img/team/team-2.png') }}" alt="Sheena Anderson"
-                                    class="img-fluid">
-                                {{-- <div class="social">
-                                    <a href="https://www.tiktok.com/@thunder.co0" class="tiktok"><i
-                                            class="bi bi-tiktok"></i></a>
-                                    <a href="https://www.instagram.com/thunder.co0/" class="instagram"><i
-                                            class="bi bi-instagram"></i></a>
-                                    <a href="https://www.facebook.com/profile.php?id=100085399755202" class="facebook"><i
-                                            class="bi bi-facebook"></i></a>
-                                </div> --}}
-                            </figure>
-                            <div class="person-contents">
-                                <h3>Fadi Debs</h3>
-                                <span class="position">COO & Co Founder</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="person">
-                            <figure>
-                                <img src="{{ asset('public/assets/img/team/team-3.png') }}" alt="Evan Smith"
-                                    class="img-fluid">
-                                {{-- <div class="social">
-                                    <a href="https://www.tiktok.com/@thunder.co0" class="tiktok"><i
-                                            class="bi bi-tiktok"></i></a>
-                                    <a href="https://www.instagram.com/thunder.co0/" class="instagram"><i
-                                            class="bi bi-instagram"></i></a>
-                                    <a href="https://www.facebook.com/profile.php?id=100085399755202" class="facebook"><i
-                                            class="bi bi-facebook"></i></a>
-                                </div> --}}
-                            </figure>
-                            <div class="person-contents">
-                                <h3>Ahmad Khayat</h3>
-                                <span class="position">Art Director</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
         </div>
 
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    @forelse($data['teamMembers'] as $member)
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="person">
+                                <figure>
+                                    @if ($member->avatar)
+                                        <img src="{{ asset('storage/' . $member->avatar) }}" alt="{{ $member->name }}"
+                                            class="img-fluid">
+                                    @else
+                                        <div class="w-100 h-100 bg-blue-100 flex items-center justify-center"
+                                            style="min-height: 200px;">
+                                            <span
+                                                class="text-blue-600 font-bold text-4xl">{{ strtoupper(substr($member->name, 0, 1)) }}</span>
+                                        </div>
+                                    @endif
+                                </figure>
+                                <div class="person-contents">
+                                    <h3>{{ $member->name }}</h3>
+                                    <span
+                                        class="position">{{ $member->team_position ?? ($member->role->name ?? 'Team Member') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="col-12 text-center">
+                            <p>No team members to display.</p>
+                        </div>
+                    @endforelse
+                </div>
+            </div>
+        </div>
     </section><!-- /Team Section -->
 @endsection
 
