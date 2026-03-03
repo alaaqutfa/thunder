@@ -24,7 +24,7 @@
                                 class="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#cc1820] focus:ring focus:ring-[#cc1820] focus:ring-opacity-50">
                             @if ($staff->avatar)
                                 <div class="mt-2">
-                                    <img src="{{ asset('public/storage/' . $staff->avatar) }}" alt=""
+                                    <img src="{{ asset('storage/app/public/' . $staff->avatar) }}" alt=""
                                         class="w-20 h-20 rounded-lg object-cover">
                                 </div>
                             @endif

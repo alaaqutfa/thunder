@@ -123,7 +123,7 @@
                                             <div class="flex-shrink-0 w-10 min-w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center"
                                                 style="width: 40px; height: 40px;">
                                                 @if ($staff_member->avatar)
-                                                    <img src="{{ asset('public/storage/' . $staff_member->avatar) }}"
+                                                    <img src="{{ asset('storage/app/public/' . $staff_member->avatar) }}"
                                                         alt="" class="w-10 min-w-10 h-10 rounded-lg object-cover">
                                                 @else
                                                     <span
