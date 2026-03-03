@@ -106,59 +106,61 @@
         </video>
     </article><!-- End Video -->
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    @if (count($data['featuredProjects']))
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio section">
 
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Featured Portfolio</h2>
-            <p>Explore our recent projects showcasing creativity, quality, and innovation across Iraq.</p>
-        </div><!-- End Section Title -->
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Featured Portfolio</h2>
+                <p>Explore our recent projects showcasing creativity, quality, and innovation across Iraq.</p>
+            </div><!-- End Section Title -->
 
-        <div class="container">
+            <div class="container">
 
-            <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+                <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-                <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                    <li data-filter="*" class="filter-active">All</li>
-                    @foreach ($data['services'] as $service)
-                        <li data-filter=".{{ $service['slug'] }}">{{ $service['name'] }}</li>
-                    @endforeach
+                    <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                        <li data-filter="*" class="filter-active">All</li>
+                        @foreach ($data['services'] as $service)
+                            <li data-filter=".{{ $service['slug'] }}">{{ $service['name'] }}</li>
+                        @endforeach
 
-                </ul><!-- End Portfolio Filters -->
+                    </ul><!-- End Portfolio Filters -->
 
-                <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-                    @foreach ($data['featuredProjects'] as $project)
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item {{ $project->service->slug }}">
-                            <img src="{{ asset('public/storage/' . $project->main_image) }}"
-                                class="img-fluid object-contain" style="max-height:300px; width:auto; transition:0.3s;"
-                                alt="{{ $project->name }} Project">
-                            <div class="portfolio-info">
-                                <h4>{{ $project->name }}</h4>
-                                <p>{{ $project->description }}</p>
-                                <a href="{{ asset('public/storage/' . $project->main_image) }}"
-                                    title="{{ $project->name }}"
-                                    data-gallery="portfolio-gallery-{{ $project->service->slug }}"
-                                    class="glightbox preview-link">
-                                    <i class="bi bi-zoom-in"></i>
-                                </a>
-                                <a href="{{ route('project.single', $project->id) }}" title="More Details"
-                                    class="details-link">
-                                    <i class="bi bi-link-45deg"></i>
-                                </a>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-                    @endforeach
+                    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+                        @foreach ($data['featuredProjects'] as $project)
+                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item {{ $project->service->slug }}">
+                                <img src="{{ asset('public/storage/' . $project->main_image) }}"
+                                    class="img-fluid object-contain" style="max-height:300px; width:auto; transition:0.3s;"
+                                    alt="{{ $project->name }} Project">
+                                <div class="portfolio-info">
+                                    <h4>{{ $project->name }}</h4>
+                                    <p>{{ $project->description }}</p>
+                                    <a href="{{ asset('public/storage/' . $project->main_image) }}"
+                                        title="{{ $project->name }}"
+                                        data-gallery="portfolio-gallery-{{ $project->service->slug }}"
+                                        class="glightbox preview-link">
+                                        <i class="bi bi-zoom-in"></i>
+                                    </a>
+                                    <a href="{{ route('project.single', $project->id) }}" title="More Details"
+                                        class="details-link">
+                                        <i class="bi bi-link-45deg"></i>
+                                    </a>
+                                </div>
+                            </div><!-- End Portfolio Item -->
+                        @endforeach
 
-                </div><!-- End Portfolio Container -->
+                    </div><!-- End Portfolio Container -->
 
-                {{ $data['featuredProjects']->links() }}
+                    {{ $data['featuredProjects']->links() }}
+
+                </div>
 
             </div>
 
-        </div>
-
-    </section><!-- /Portfolio Section -->
+        </section><!-- /Portfolio Section -->
+    @endif
 
     <!-- Video -->
     <article data-aos="fade-up">
@@ -278,21 +280,22 @@
 
     </section> --}}<!-- /Testimonials Section -->
 
-    <!-- Partners Section -->
-    <section id="partners" class="testimonials section">
+    @if (count($data['brands']))
+        <!-- Partners Section -->
+        <section id="partners" class="testimonials section">
 
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Our Partners</h2>
-            <p>
-                Brands who trust Thunder to deliver quality and innovation.
-            </p>
-        </div>
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Our Partners</h2>
+                <p>
+                    Brands who trust Thunder to deliver quality and innovation.
+                </p>
+            </div>
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="swiper init-swiper">
-                <script type="application/json" class="swiper-config">
+                <div class="swiper init-swiper">
+                    <script type="application/json" class="swiper-config">
             {
               "loop": true,
               "speed": 4000,
@@ -307,36 +310,37 @@
             }
             </script>
 
-                <div class="swiper-wrapper">
+                    <div class="swiper-wrapper">
 
-                    @foreach ($data['brands'] as $brand)
-                        <div class="swiper-slide"
-                            style="width:120px; display:flex; align-items:center; justify-content:center;">
-                            <img src="{{ asset('storage/app/public/' . $brand->logo) }}" alt="{{ $brand->name }}"
-                                style="max-height:55px; width:auto; opacity:0.8; transition:0.3s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
-                        </div>
-                    @endforeach
+                        @foreach ($data['brands'] as $brand)
+                            <div class="swiper-slide"
+                                style="width:120px; display:flex; align-items:center; justify-content:center;">
+                                <img src="{{ asset('storage/app/public/' . $brand->logo) }}" alt="{{ $brand->name }}"
+                                    style="max-height:55px; width:auto; opacity:0.8; transition:0.3s;"
+                                    onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+                            </div>
+                        @endforeach
 
-                    {{-- تكرار الشعارات لعمل تأثير الحركة المستمرة --}}
-                    @foreach ($data['brands'] as $brand)
-                        <div class="swiper-slide"
-                            style="width:120px; display:flex; align-items:center; justify-content:center;">
-                            <img src="{{ asset('storage/app/public/' . $brand->logo) }}" alt="{{ $brand->name }}"
-                                style="max-height:55px; width:auto; opacity:0.8; transition:0.3s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
-                        </div>
-                    @endforeach
+                        {{-- تكرار الشعارات لعمل تأثير الحركة المستمرة --}}
+                        @foreach ($data['brands'] as $brand)
+                            <div class="swiper-slide"
+                                style="width:120px; display:flex; align-items:center; justify-content:center;">
+                                <img src="{{ asset('storage/app/public/' . $brand->logo) }}" alt="{{ $brand->name }}"
+                                    style="max-height:55px; width:auto; opacity:0.8; transition:0.3s;"
+                                    onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+                            </div>
+                        @endforeach
 
+                    </div>
                 </div>
+
             </div>
 
-        </div>
+        </section>
+        <!-- /Partners Section -->
+    @endif
 
-    </section>
-    <!-- /Partners Section -->
-
-    @if ($data['teamMembers'])
+    @if (count($data['teamMembers']))
         <!-- Team Section -->
         <section class="team-15 team section light-background" id="team">
             <div class="container section-title" data-aos="fade-up">
