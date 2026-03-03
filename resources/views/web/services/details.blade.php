@@ -51,23 +51,27 @@
                                 <i class="bi bi-filetype-pdf"></i>
                                 <span>Catalog PDF</span>
                             </a>
-                            {{-- <a href="assets/catalog/Thunder-Catalog.doc">
-                                <i class="bi bi-file-earmark-word"></i>
-                                <span>Catalog DOC</span>
-                            </a> --}}
                         </div>
                     </div><!-- End Download Catalog -->
 
                     <div class="help-box d-flex flex-column justify-content-center align-items-center">
                         <i class="bi bi-headset help-icon"></i>
                         <h4>Have a Question?</h4>
-                        <p class="d-flex align-items-center mt-2 mb-0">
+                        <p class="d-flex align-items-start mt-2 mb-0">
                             <i class="bi bi-telephone me-2"></i>
                             <a href="https://wa.me/9647722234030">+964 772 223 4030</a>
                         </p>
-                        <p class="d-flex align-items-center mt-1 mb-0">
+                        <p class="d-flex align-items-start mt-1 mb-0">
+                            <i class="bi bi-telephone me-2"></i>
+                            <a href="https://wa.me/9647822230999">+964 782 223 0999</a>
+                        </p>
+                        <p class="d-flex align-items-start mt-1 mb-0">
                             <i class="bi bi-envelope me-2"></i>
-                            <a href="mailto:swatThunderoffice@gmail.com">swatThunderoffice@gmail.com</a>
+                            <a href="mailto:info@thunder-iraq.com">info@thunder-iraq.com</a>
+                        </p>
+                        <p class="d-flex align-items-start mt-1 mb-0">
+                            <i class="bi bi-envelope me-2"></i>
+                            <a href="mailto:sales@thunder-iraq.com">sales@thunder-iraq.com</a>
                         </p>
                     </div><!-- End Help Box -->
 
