@@ -105,6 +105,21 @@
 
                         <!-- Active Status & Team Options -->
                         <div class="md:col-span-2">
+                            <!-- Team Position (optional) -->
+                            <div class="mt-4">
+                                <label for="team_position" class="block text-sm font-medium text-[#384046] mb-2">
+                                    Team Position (optional) <span class="text-gray-400 text-xs">– If left empty, the role
+                                        name will be displayed</span>
+                                </label>
+                                <input type="text" name="team_position" id="team_position"
+                                    value="{{ old('team_position', $staff->team_position) }}"
+                                    class="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#cc1820] focus:ring focus:ring-[#cc1820] focus:ring-opacity-50"
+                                    placeholder="e.g. Creative Director">
+                                @error('team_position')
+                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                @enderror
+                            </div>
+
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <!-- Active Account -->
                                 <label class="flex items-center gap-2">
@@ -123,20 +138,7 @@
                                 </label>
                             </div>
 
-                            <!-- Team Position (optional) -->
-                            <div class="mt-4">
-                                <label for="team_position" class="block text-sm font-medium text-[#384046] mb-2">
-                                    Team Position (optional) <span class="text-gray-400 text-xs">– If left empty, the role
-                                        name will be displayed</span>
-                                </label>
-                                <input type="text" name="team_position" id="team_position"
-                                    value="{{ old('team_position', $staff->team_position) }}"
-                                    class="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#cc1820] focus:ring focus:ring-[#cc1820] focus:ring-opacity-50"
-                                    placeholder="e.g. Creative Director">
-                                @error('team_position')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
+
                         </div>
                     </div>
 
