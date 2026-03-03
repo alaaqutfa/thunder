@@ -31,7 +31,7 @@ class StaffController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'role_id' => ['required', 'exists:roles,id', function ($attribute, $value, $fail) {
                 if ($value == 5) {
-                    $fail('لا يمكن تعيين دور العميل للموظفين.');
+                    $fail('The customer role cannot be assigned to employees.');
                 }
             }],
             'is_active' => ['sometimes', 'boolean'],
@@ -46,13 +46,13 @@ class StaffController extends Controller
             'is_active' => $request->has('is_active'),
         ]);
 
-        return redirect()->route('admin.staff.index')->with('success', 'تم إضافة الموظف بنجاح.');
+        return redirect()->route('admin.staff.index')->with('success', 'The employee was added successfully.');
     }
 
     public function edit(User $staff)
     {
         if ($staff->role_id == 5) {
-            abort(403, 'لا يمكن تعديل بيانات العملاء.');
+            abort(403, 'The customer role cannot be modified.');
         }
 
         $roles = Role::where('id', '!=', 5)->orderBy('name')->get();
@@ -62,7 +62,8 @@ class StaffController extends Controller
     public function update(Request $request, User $staff)
     {
         if ($staff->role_id == 5) {
-            abort(403, 'لا يمكن تعديل بيانات العملاء.');
+            abort(403, 'The customer role cannot be modified.');
+
         }
 
         $request->validate([
@@ -72,7 +73,7 @@ class StaffController extends Controller
             'password' => ['nullable', 'confirmed', Rules\Password::defaults()],
             'role_id' => ['required', 'exists:roles,id', function ($attribute, $value, $fail) {
                 if ($value == 5) {
-                    $fail('لا يمكن تعيين دور العميل للموظفين.');
+                    $fail('The customer role cannot be assigned to employees.');
                 }
             }],
             'is_active' => ['sometimes', 'boolean'],
@@ -92,29 +93,29 @@ class StaffController extends Controller
 
         $staff->update($data);
 
-        return redirect()->route('admin.staff.index')->with('success', 'تم تحديث بيانات الموظف بنجاح.');
+        return redirect()->route('admin.staff.index')->with('success', 'The employee details were updated successfully.');
     }
 
     public function toggleStatus(User $staff)
     {
         if ($staff->role_id == 5) {
-            abort(403, 'لا يمكن تغيير حالة العملاء.');
+            abort(403, 'The customer role cannot be modified.');
         }
 
         $staff->is_active = !$staff->is_active;
         $staff->save();
 
-        return redirect()->route('admin.staff.index')->with('success', 'تم تغيير حالة الموظف بنجاح.');
+        return redirect()->route('admin.staff.index')->with('success', 'The employee status was updated successfully.');
     }
 
     public function destroy(User $staff)
     {
         if ($staff->role_id == 5) {
-            abort(403, 'لا يمكن حذف العملاء.');
+            abort(403, 'The customer role cannot be deleted.');
         }
 
         $staff->delete();
 
-        return redirect()->route('admin.staff.index')->with('success', 'تم حذف الموظف بنجاح.');
+        return redirect()->route('admin.staff.index')->with('success', 'The employee was deleted successfully.');
     }
 }
