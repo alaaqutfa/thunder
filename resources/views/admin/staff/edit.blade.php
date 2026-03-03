@@ -15,7 +15,7 @@
                     @csrf
                     @method('PUT')
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-2">
                         <!-- Avatar -->
                         <div class="md:col-span-2">
                             <label for="avatar" class="block text-sm font-medium text-[#384046] mb-2">Profile
@@ -106,7 +106,7 @@
                         <!-- Active Status & Team Options -->
                         <div class="md:col-span-2">
                             <!-- Team Position (optional) -->
-                            <div class="mt-4">
+                            <div >
                                 <label for="team_position" class="block text-sm font-medium text-[#384046] mb-2">
                                     Team Position (optional) <span class="text-gray-400 text-xs">– If left empty, the role
                                         name will be displayed</span>
@@ -120,7 +120,7 @@
                                 @enderror
                             </div>
 
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                                 <!-- Active Account -->
                                 <label class="flex items-center gap-2">
                                     <input type="checkbox" name="is_active" value="1"
