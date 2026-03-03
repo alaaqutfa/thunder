@@ -336,23 +336,23 @@
     </section>
     <!-- /Partners Section -->
 
-    <!-- Team Section -->
-    <section class="team-15 team section light-background" id="team">
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Our Team</h2>
-            <p>Meet the professionals behind Thunder’s success in advertising and contracting.</p>
-        </div>
+    @forelse($data['teamMembers'] as $member)
+        <!-- Team Section -->
+        <section class="team-15 team section light-background" id="team">
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Our Team</h2>
+                <p>Meet the professionals behind Thunder’s success in advertising and contracting.</p>
+            </div>
 
-        <div class="content">
-            <div class="container">
-                <div class="row">
-                    @forelse($data['teamMembers'] as $member)
+            <div class="content">
+                <div class="container">
+                    <div class="row">
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="person">
                                 <figure>
                                     @if ($member->avatar)
-                                        <img src="{{ asset('storage/app/public/' . $member->avatar) }}" alt="{{ $member->name }}"
-                                            class="img-fluid">
+                                        <img src="{{ asset('storage/app/public/' . $member->avatar) }}"
+                                            alt="{{ $member->name }}" class="img-fluid">
                                     @else
                                         <div class="w-100 h-100 bg-blue-100 flex items-center justify-center"
                                             style="min-height: 200px;">
@@ -368,15 +368,11 @@
                                 </div>
                             </div>
                         </div>
-                    @empty
-                        <div class="col-12 text-center">
-                            <p>No team members to display.</p>
-                        </div>
-                    @endforelse
+                    </div>
                 </div>
             </div>
-        </div>
-    </section><!-- /Team Section -->
+        </section><!-- /Team Section -->
+    @endforelse
 @endsection
 
 @push('script')
