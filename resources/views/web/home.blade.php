@@ -351,7 +351,7 @@
                             <div class="person">
                                 <figure>
                                     @if ($member->avatar)
-                                        <img src="{{ asset('storage/' . $member->avatar) }}" alt="{{ $member->name }}"
+                                        <img src="{{ asset('public/storage/' . $member->avatar) }}" alt="{{ $member->name }}"
                                             class="img-fluid">
                                     @else
                                         <div class="w-100 h-100 bg-blue-100 flex items-center justify-center"
