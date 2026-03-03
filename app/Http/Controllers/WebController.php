@@ -33,7 +33,7 @@ class WebController extends Controller
             'teamMembers'      => User::where('show_in_team', true)
                 ->where('is_active', true)
                 ->with('role')
-                ->orderBy('name')
+                ->orderBy('role_id', 'ASC')
                 ->get(),
         ];
 
